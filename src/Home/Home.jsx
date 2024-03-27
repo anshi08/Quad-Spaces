@@ -1,0 +1,30 @@
+import React from 'react';
+// import svgImage from "../assets/image (1).svg";
+// import './Home.css';
+import QuadRealText from './QuadRealText';
+import QuadRealSpaces from './QuadRealSpaces';
+import SpaceMgt from './SpaceMgt';
+
+const Home = () => {
+    return (
+        <>
+            
+            {/* <div className='relative' >
+                <img src={svgImage} className='svgImage' style={{border:'2px solid red'}} />
+            </div> */}
+
+            <div>
+            <QuadRealText />
+            </div>
+            <div style={{padding:'2rem' , marginTop:'2rem'}}>
+                <QuadRealSpaces />
+            </div>
+            <div style={{marginTop:'2rem'}}>
+                <SpaceMgt />
+            </div>
+          
+        </>
+    );
+};
+
+export default Home;

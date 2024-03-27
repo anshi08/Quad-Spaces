@@ -1,0 +1,17 @@
+/* .bgColor{
+    background-color: rgb(248, 241, 243) ;
+} */
+
+.svgImage {
+    position: absolute;
+    left: -217px;
+    top: -199px;
+}
+
+@media (max-width: 400px) {
+    .svgImage {
+        position: absolute;
+        left: -185px;
+        top: -186px;
+    }
+}

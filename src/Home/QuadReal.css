@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.workplace{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    line-height: 55px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.space{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    line-height: 22px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.RealTime{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    line-height: 22px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.booking{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    /* z-index: 23; */
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    /* overflow: visible; */
+    /* white-space: pre-wrap; */
+    /* text-align: left; */
+    /* padding: 0px; */
+    line-height: 22px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.Data{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    /* z-index: 15; */
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    /* overflow: visible; */
+    /* white-space: pre-wrap; */
+    /* text-align: left; */
+    /* padding: 0px; */
+    line-height: 22px;
+}
+
+.svgImage {
+    position: absolute;
+    left: -217px;
+    top: -199px;
+}
+
+@media (max-width: 400px) {
+    .svgImage {
+        position: absolute;
+        left: -185px;
+        top: -186px;
+    }
+}
+/* animations.css */
+
+.arrow-animation {
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; /* Safari and Chrome */
+}
+
+@keyframes arrow {
+    0% { opacity: 0; transform: translateY(10px); }
+    80% { opacity: 1; transform: translateY(50px); }
+    100% { opacity: 0; transform: translateY(50px); }
+}
+
+@-webkit-keyframes arrow /* Safari and Chrome */ {
+    0% { opacity: 0; transform: translateY(10px); }
+    80% { opacity: 1; transform: translateY(50px); }
+    100% { opacity: 0; transform: translateY(50px); }
+}

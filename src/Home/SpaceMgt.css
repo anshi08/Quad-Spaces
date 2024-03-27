@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Gotham Pro-Bold-BTN8n6eV" ;
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.occupancytext{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    z-index: 85;
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    line-height: 40px;
+}
+
+@font-face {
+    font-family: "Gotham Book-Italic-998JD7Yk";
+    src: url('../Fonts/gotham-bookitalic.woff') format('woff');
+}
+.spanTag{
+    opacity: 0.8;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    z-index: 86;
+    transition-property: none;
+    font-family: "Gotham Book-Italic-998JD7Yk";
+    line-height: 26px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.AccordianItem1{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    line-height: 29px;
+}
