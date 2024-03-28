@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Gotham Pro-Bold-BTN8n6eV" ;
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.reporting{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    line-height: 46px;
+}
+
+@font-face {
+    font-family: "Gotham Book italic";
+    src: url("../Fonts/gotham-bookitalic.woff") format('woff');
+}
+.clickMore{
+    font-weight: 400;
+    opacity: 0.8;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Book italic";
+    line-height: 26px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56" ;
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.cardText{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    line-height: 38px;
+}
+
+.card-root {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-root:hover {
+    transform: translateY(-10px);
+  }

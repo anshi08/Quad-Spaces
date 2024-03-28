@@ -32,11 +32,30 @@
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     src: url('../Fonts/gothampro-bold.woff') format('woff');
 }
-.AccordianItem1{
+
+.selected12 {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
     color: rgb(0, 0, 0);
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     line-height: 29px;
+    cursor: pointer;
+}
+
+.sidearrow-animation {
+    animation: sidearrow 2s infinite;
+    -webkit-animation: sidearrow 2s infinite; /* Safari and Chrome */
+}
+
+@keyframes sidearrow {
+    0% { opacity: 0; transform: translateX(-50px); }
+    50% { opacity: 1; transform: translateX(0px); }
+    100% { opacity: 0; transform: translateX(50px); }
+}
+
+@-webkit-keyframes sidearrow /* Safari and Chrome */ {
+    0% { opacity: 0; transform: translateX(-50px); }
+    50% { opacity: 1; transform: translateX(0px); }
+    100% { opacity: 0; transform: translateX(50px); }
 }

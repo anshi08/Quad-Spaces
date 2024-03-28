@@ -18,6 +18,7 @@
     src: url('../Fonts/gothampro.woff') format('woff');
 }
 .space{
+    opacity: 0.8;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
@@ -32,6 +33,7 @@
 }
 .RealTime{
     font-weight: 400;
+    opacity: 0.8;
     font-style: normal;
     font-size: 14px;
     color: rgb(0, 0, 0);
@@ -45,15 +47,12 @@
 }
 .booking{
     font-weight: 400;
+    opacity: 0.8;
     font-style: normal;
     font-size: 14px;
     color: rgb(0, 0, 0);
     /* z-index: 23; */
     font-family: "Gotham Pro-Normal-EO0rZg56";
-    /* overflow: visible; */
-    /* white-space: pre-wrap; */
-    /* text-align: left; */
-    /* padding: 0px; */
     line-height: 22px;
 }
 
@@ -64,6 +63,7 @@
 .Data{
     font-weight: 400;
     font-style: normal;
+    opacity: 0.8;
     font-size: 14px;
     color: rgb(0, 0, 0);
     /* z-index: 15; */
