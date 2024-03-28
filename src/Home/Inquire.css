@@ -1,0 +1,27 @@
+@font-face {
+    font-family:"Gotham Pro-Bold-BTN8n6eV" ;
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.platform{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    /* text-align: left; */
+    line-height: 46px;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56" ;
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.Contactus{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    /* text-align: left; */
+    line-height: 26px;
+}

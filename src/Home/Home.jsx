@@ -7,6 +7,7 @@ import SpaceMgt from './SpaceMgt';
 import ReportingAnalytics from './ReportingAnalytics';
 import BookingDemo from './BookingDemo';
 import Integrations from './Integrations';
+// import Inquire from './Inquire';
 
 const Home = () => {
     return (
@@ -32,6 +33,7 @@ const Home = () => {
                 <BookingDemo />
             </div>
             <Integrations />
+            {/* <Inquire /> */}
         </>
     );
 };
