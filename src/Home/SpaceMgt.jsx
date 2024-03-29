@@ -4,6 +4,7 @@ import gif1 from "../assets/screen-recording.gif";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import gif2 from "../assets/Map1.jpg";
 import "./SpaceMgt.css";
+import svgImage from "../assets/image (1).svg";
 
 const SpaceMgt = () => {
     const [selectedItem, setSelectedItem] = useState(1); // Default selected item is 1
@@ -15,9 +16,13 @@ const SpaceMgt = () => {
     return (
         <>
             <Grid container>
-                <Grid item xs={12} md={5} padding="2rem"
+                <Grid item xs={0} md={1} position="relative">
+                <img src={svgImage} className='absolute' style={{left:'-49%',
+                zIndex:'-1'}} />
+                </Grid>
+                <Grid item xs={12} md={5} padding={1}
                     display="flex" justifyContent="center" flexDirection="column">
-
+  
                     <p className='occupancytext'>Space Management & Occupancy Tracking</p>
 
                     <span className='spanTag my-4'>Click below to see more</span>
@@ -29,35 +34,52 @@ const SpaceMgt = () => {
                             Manage your Floorplan
                         </p>
                         {selectedItem === 1 && (
-                        <div className='sidearrow-animation'>
-                        <ArrowForwardIosIcon className='sidearrow'
-                        onClick={() => handleItemClick(1)} />
-                        </div>
-                    )}
+                            <div className='sidearrow-animation'>
+                                <ArrowForwardIosIcon className='sidearrow'
+                                    onClick={() => handleItemClick(1)} />
+                            </div>
+                        )}
                     </div>
-                    {/* {selectedItem === 1 && ( */}
-                    <hr className='my-3' style={{ border: '2px solid rgb(15, 103, 100)', width: '70%' }} />
-                    {/* )} */}
+                    {selectedItem === 1 ? (
+                        <hr className={`my-3 animated-line`} style={{ border: '2px solid rgb(15, 103, 100)', width: '70%' }} />
+                    ) : (
+                        <hr className={`my-3`} style={{ border: '2px solid lightgrey', width: '70%' }} />
+                    )}
                     <div style={{ width: '70%', display: 'flex', justifyContent: 'space-between', cursor: 'pointer' }}>
-                        <p 
+                        <p
                             onClick={() => handleItemClick(2)}
                             className={`selected12 ${selectedItem === 2 ? 'selected' : ''}`}>
                             Tracking Occupancy
                         </p>
                         {selectedItem === 2 && (
-                        <div className='sidearrow-animation'>
-                        <ArrowForwardIosIcon className='sidearrow'
-                        onClick={() => handleItemClick(2)} />
-                        </div>
+                            <div className='sidearrow-animation'>
+                                <ArrowForwardIosIcon className='sidearrow'
+                                    onClick={() => handleItemClick(2)} />
+                            </div>
                         )}
                     </div>
-                    {/* {selectedItem === 2 && ( */}
-                    <hr className='my-3' style={{ border: '2px solid rgb(15, 103, 100)', width: '70%' }} />
-                    {/* )} */}
+                    {selectedItem === 2 ? (
+                        <hr className={`my-3 animated-line`} style={{ border: '2px solid rgb(15, 103, 100)', width: '70%' }} />
+                    ) : (
+                        <hr className={`my-3`} style={{ border: '2px solid lightgrey', width: '70%' }} />
+                    )}
                 </Grid>
 
-                <Grid item xs={12} md={7}>
-                    <img src={selectedItem === 1 ? gif1 : gif2} alt="Gif" />
+                <Grid item xs={12} md={6} style={{ position: 'relative' }}>
+                    <img src={selectedItem === 1 ? gif1 : gif2} alt="Gif" style={{ width: '100%' }} />
+                    {selectedItem === 1 && (
+                          <div style={{ position: 'absolute', top: '-8%', left: '53%', transform: 'translateX(-50%)'}}>
+                          <p className='easily p-4'>
+                              Easily navigate between each building and floor to reserve any desk or workstation that you need.
+                          </p>
+                      </div>
+                    )}
+                    {selectedItem === 2 && (
+                        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'black' }}>
+                            <p className='computerText p-4'>Easily monitor which desks and meeting rooms become available in real time from you computer.
+                            </p>
+                        </div>
+                    )}
                 </Grid>
             </Grid>
         </>

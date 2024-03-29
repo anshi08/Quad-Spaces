@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="19" height="19" aria-hidden="true" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="a" x1="100%" x2="50%" y1="100%" y2="0%" class="cerosgradient" data-cerosgradient="true" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F6764" style="transition-property:none"/>
+      <stop offset="100%" stop-color="#0F6764" style="transition-property:none"/>
+    </linearGradient>
+  </defs>
+  <!-- Rotate the paths by 45 degrees -->
+  <path d="M5 42.5h90v15H5z" transform="rotate(45 50 50)" style="fill:url(#a);transition-property:none"/>
+  <path d="M42.5 5h15v90h-15z" transform="rotate(45 50 50)" style="fill:url(#a);transition-property:none"/>
+</svg>
