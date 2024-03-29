@@ -16,9 +16,11 @@ import ChildComponent from './ChildComponent';
 const ReportingAnalytics = () => {
 
     const [clickedCard, setClickedCard] = useState(false);
-    console.log("d",clickedCard)
+    
+
     const [open,setOpen]=useState(true)
-    console.log("setOpen",open)
+    
+
     const handleCardClick = (cardName) => {
         if (clickedCard === cardName) {
             setOpen(!open);
@@ -61,7 +63,7 @@ const ReportingAnalytics = () => {
 
                     <Grid item xs={12} md={4}>
                         <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                            <Card variant="outlined" style={{ padding: '2rem' }} >
+                            <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Meeting Rooms')} >
                                 {/* Middle Image */}
                                 <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
                                     <img src={MeetingRoom} className='my-3' />
@@ -80,7 +82,9 @@ const ReportingAnalytics = () => {
                     {/* Right Image */}
                     <Grid item xs={12} md={4} >
                         <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                            <Card variant="outlined" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                            <Card variant="outlined" 
+                            style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                            onClick={() => handleCardClick('Departments')}>
                                 <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
                                     <img src={Departments} className='my-3' /> {/* Adjust the size of the icon as needed */}
                                     <p className='cardText my-3' >
@@ -102,7 +106,7 @@ const ReportingAnalytics = () => {
 
             <>
             {clickedCard && <ChildComponent cardName={clickedCard} setOpen={setOpen} 
-            open={open} clickedCard={clickedCard}/>}
+            open={open} />}
             </>}
         </>
     )

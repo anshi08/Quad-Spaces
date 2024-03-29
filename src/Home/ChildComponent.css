@@ -1,0 +1,80 @@
+.title {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    z-index: 398;
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    overflow: visible;
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 0px;
+    line-height: 46px;
+}
+
+.titleText {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    z-index: 397;
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    overflow: visible;
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 0px;
+    line-height: 26px;
+}
+
+.imgContainer {
+    width: 100%;
+}
+
+.imgsrc {
+    filter: drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    /* background-color: rgb(241, 248, 248); */
+    z-index: -1;
+    /* Ensure the background is behind other content */
+}
+
+@media (max-width: 768px) {
+    .background {
+        width: 15%;
+
+    }
+}
+
+@font-face {
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+
+.btns {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: rgb(94, 110, 100);
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    line-height: 29px;
+}
+
+@media (max-width:500px) {
+    .btns {
+        font-size: 8px;
+    }
+}
+
