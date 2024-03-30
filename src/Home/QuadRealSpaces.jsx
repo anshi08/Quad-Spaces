@@ -44,7 +44,7 @@ const QuadRealSpaces = () => {
         },
         {
             value: '4',
-            color: 'rgb(219, 241, 243);',
+            color: 'rgb(219, 241, 243)',
             heading: 'Desk Booking + Reservations',
             text: 'Book a desk anytime, anywhere — and find it quickly when you get there. Our desk booking capability allows your teams to book and schedule their work weeks with ease to align with their colleagues. Easily view available seating and assign seating to visitors with our customizable options..',
             image: img4
@@ -58,44 +58,86 @@ const QuadRealSpaces = () => {
         }
     ]
 
+
+
     return (
 
         <>
-            <div>
+       
+            <div className='flex flex-col items-center'>
                 <p className='whatIs'>What is QuadReal Spaces?</p>
                 <p className='custom'>A custom tailored space management solution, providing our
                     tenants with valuable insights and controls for their spaces.</p>
             </div>
-            <TabContext value={value}>
+            <TabContext value={value} >
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
 
-                    <TabList onChange={handleChange} variant="scrollable"
-                        scrollButtons="auto">
-                        <Tab label="Feature 1" value="1" />
-                        <Tab label="Feature 2" value="2" />
-                        <Tab label="Feature 3" value="3" />
-                        <Tab label="Feature 4" value="4" />
-                        <Tab label="Feature 5" value="5" />
+                    <TabList
+                        onChange={handleChange}
+                        variant="scrollable"
+                        scrollButtons="auto"
+                    >
+                        <Tab
+                            label="Feature 1"
+                            value="1"
+                            className={value === '1' ? 'featuresBtn' : 'nonSelected'}
+                        />
+                        <Tab
+                            label="Feature 2"
+                            value="2"
+                            className={value === '2' ? 'featuresBtn' : 'nonSelected'}
+                        />
+                        <Tab
+                            label="Feature 3"
+                            value="3"
+                            className={value === '3' ? 'featuresBtn' : 'nonSelected'}
+                        />
+                        <Tab
+                            label="Feature 4"
+                            value="4"
+                            className={value === '4' ? 'featuresBtn' : 'nonSelected'}
+                        />
+                        <Tab
+                            label="Feature 5"
+                            value="5"
+                            className={value === '5' ? 'featuresBtn' : 'nonSelected'}
+                        />
+
                     </TabList>
                 </div>
                 <TabPanel value={value}>
-                    <Box className='shadow-lg'
-
-                        style={{ boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px' }}>
+                    <Box
+                        sx={{
+                            boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
+                            maxHeight: '442px',
+                            overflow: 'auto'
+                        }}>
 
 
                         {tabContent
                             .filter((tab) => tab.value === value)
                             .map((content) => (
-                                <div key={content.value} style={{ padding: '2rem' }}>
-                                    <Grid container >
+                                <div key={content.value} style={{ padding: '2rem', position: 'relative' }}>
+                                    <Grid container spacing={3} >
                                         <Grid item xs={12} md={6} display="flex" justifyContent="center">
                                             {/* <div style={{ borderLeft: `5px solid ${tabContent.find(tab => tab.value === value)?.color}`}}> */}
 
+                                            <div
+                                                className='bgStyle'
+                                                style={{
+                                                    position: 'absolute',
+                                                    left: 0,
+                                                    top: 0,
+                                                    height: '100%',
+                                                    width: '15%',
+                                                    backgroundColor: tabContent.find(tab => tab.value === value)?.color  // Set the background color dynamically based on the selected tab
+                                                }}
+                                            />
                                             <img src={content.image} style={{
-                                                width: '418px',
-                                                height: '261px', borderRadius: '10px',
-                                                filter: ' drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px)'
+                                                width: '100%',
+                                                maxHeight: 'auto', borderRadius: '10px',
+                                                filter: ' drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px)',
+                                                objectFit: 'cover'
                                             }} />
                                             {/* </div> */}
                                         </Grid>

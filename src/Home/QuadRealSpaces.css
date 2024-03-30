@@ -25,6 +25,7 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     text-align: center;
     line-height: 26px;
+    max-width: 42%;
 }
 
 @font-face {
@@ -53,5 +54,48 @@
     color: rgb(0, 0, 0);
     font-family: "Gotham Pro-Normal-EO0rZg56";
     line-height: 26px;
+}
+
+
+.css-1aquho2-MuiTabs-indicator {
+    background-color: rgb(15, 103, 100) !important; /* Your desired background color */
+    max-height: 2px !important;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Bold-BTN8n6eV" ;
+    src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.featuresBtn{
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 16px !important;
+    color: rgb(0, 0, 0) !important;
+    font-family: "Gotham Pro-Bold-BTN8n6eV" !important;
+    line-height: 26px !important;
+    text-transform: none !important;
+}
+
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56" ;
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.nonSelected{
+    font-weight: 400  !important;
+    font-style: normal  !important;
+    font-size: 16px  !important;
+    color: rgb(0, 0, 0)  !important;
+    font-family: "Gotham Pro-Normal-EO0rZg56"  !important;
+    text-transform: none  !important;
+}
+
+@media (max-width:300px) {
+    .contentText{
+        font-size: 10px;
+    }
+
+    .contentHeading{
+        font-size: 20px;
+    }
 }
 

@@ -78,7 +78,8 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     src: url('../Fonts/gothampro.woff') format('woff');
   }
-  .easily{
+  .easily {
+    position: relative;
     background-color: rgb(219, 241, 243);
     font-weight: 400;
     font-style: normal;
@@ -87,12 +88,30 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     text-align: left;
     line-height: 22px;
+    padding: 1rem;
   }
+  
+  .easily::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    border: solid transparent;
+    border-width: 10px;
+    border-right-color: rgb(219, 241, 243); /* Color for the arrow */
+    border-left-width: 0;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+}
+
+  
 
   @media (max-width: 500px) {
     .easily {
         font-size: 11px;
         line-height: 11px;
+        padding: 8px;
     }
 }
 
@@ -100,7 +119,8 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     src: url('../Fonts/gothampro.woff') format('woff');
   }
-  .computerText{
+  .computerText {
+    position: relative;
     background-color: rgb(219, 241, 243);
     font-weight: 400;
     font-style: normal;
@@ -109,12 +129,30 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     text-align: left;
     line-height: 22px;
-  }
+    padding: 1rem;
+}
+
+.computerText::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    right: 100%;
+    transform: translateY(-50%);
+    border: solid transparent;
+    border-width: 10px;
+    border-right-color: rgb(219, 241, 243); /* Adjusted border-right-color */
+    border-left-width: 0; /* Changed border-left-width to 0 */
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+}
+
+
 
   @media (max-width: 500px) {
     .computerText {
         font-size: 11px;
         line-height: 11px;
+        padding: 8px;
     }
 }
 

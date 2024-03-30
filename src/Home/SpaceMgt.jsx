@@ -69,14 +69,14 @@ const SpaceMgt = () => {
                     <img src={selectedItem === 1 ? gif1 : gif2} alt="Gif" style={{ width: '100%' }} />
                     {selectedItem === 1 && (
                           <div style={{ position: 'absolute', top: '-8%', left: '53%', transform: 'translateX(-50%)'}}>
-                          <p className='easily p-4'>
+                          <p className='easily'>
                               Easily navigate between each building and floor to reserve any desk or workstation that you need.
                           </p>
                       </div>
                     )}
                     {selectedItem === 2 && (
                         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'black' }}>
-                            <p className='computerText p-4'>Easily monitor which desks and meeting rooms become available in real time from you computer.
+                            <p className='computerText'>Easily monitor which desks and meeting rooms become available in real time from you computer.
                             </p>
                         </div>
                     )}

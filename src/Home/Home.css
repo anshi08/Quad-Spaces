@@ -17,6 +17,6 @@
 }
 
 .blurred {
-    filter: blur(5px);
+    opacity: 0.2;
     /* Adjust the amount of blur as needed */
 }
