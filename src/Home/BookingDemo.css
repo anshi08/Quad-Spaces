@@ -95,3 +95,12 @@
     text-align: left;
     line-height: 20px;
   }
+
+  @media (max-width:600px) {
+     .welcome{
+        font-size: 8px;
+     } 
+     .dashboard{
+        font-size: 8px;
+     }
+  }

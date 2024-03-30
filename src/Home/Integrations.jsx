@@ -58,13 +58,15 @@ const Integrations = () => {
                     <Box className='p-16' >
                         <Card className='p-16' style={{boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
                     borderRadius:'10px'}}>
-                            <div className='flex items-baseline'>
+                            <div className='flex items-start'>
                             <img src={quotes} alt='quoteMark' />
                             <p className='quote flex flex-wrap'>{currentItem.quote}</p>
                             </div>
                             <hr className='mt-12 mb-12' style={{ border: '2px solid rgb(15, 103, 100)' }} />
+                            <div>
                             <p className='name'>{currentItem.name}</p>
                             <p className='desg'>{currentItem.desg}</p>
+                            </div>
                             <div>
                                 <div className='flex justify-center mt-8'>
                                     <KeyboardArrowLeftIcon onClick={handlePrevItem} 

@@ -15,11 +15,15 @@ const SpaceMgt = () => {
 
     return (
         <>
-            <Grid container>
-                <Grid item xs={0} md={1} position="relative">
-                <img src={svgImage} className='absolute' style={{left:'-49%',
+            <Grid container position="relative">
+
+                {/* partially image in out */}
+                <img src={svgImage} className='absolute' style={{left:'-24%',top:'-36%',
                 zIndex:'-1'}} />
+
+                <Grid item xs={0} md={1} >
                 </Grid>
+                
                 <Grid item xs={12} md={5} padding={1}
                     display="flex" justifyContent="center" flexDirection="column">
   

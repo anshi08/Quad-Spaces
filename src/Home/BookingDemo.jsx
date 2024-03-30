@@ -31,13 +31,13 @@ const BookingDemo = () => {
        
             {/* <Box style={{border:'2px solid red',backgroundColor:" rgb(15, 103, 100)"}}> */}
             <div style={{backgroundColor:" rgb(15, 103, 100)"}} >
-                <div className='p-4'>
+            <div className='p-4 md:p-8'>
                 <p className='welcome my-2'>
                   Welcome to Quadreal Spaces
                 </p>
                 <p className='dashboard my-2'>You can book your own workspace using this dashboard.</p>
                 {/* Button  */}
-                <div className='flex cursor-pointer'>
+                <div className='flex cursor-pointer items-center'>
                 <p className='welcome my-2'>
                     BEGIN DEMO 
                  </p>
