@@ -50,11 +50,22 @@
     line-height: 38px;
 }
 
-@media (max-width:450px) {
+.BoxStyle{
+    padding: 4rem;
+}
+
+
+@media (max-width:500px) {
     .quote{
         font-size: 10px;
         line-height: normal;
     }  
+    .imgquote{
+        width: 10px;
+    }
+    .BoxStyle{
+        padding: 1rem;
+    }
 }
 
 
@@ -107,7 +118,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    color: rgb(94, 110, 100);
+    color:rgb(94,110,100);
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     line-height: 29px;
 }

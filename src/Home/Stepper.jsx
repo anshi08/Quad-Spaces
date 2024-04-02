@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Stepper({ numberOfSteps }) {
-  const [currentStep, setCurrentStep] = useState(-1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const handleStepClick = (index) => {
     setCurrentStep(index);
@@ -16,7 +16,7 @@ export default function Stepper({ numberOfSteps }) {
         <React.Fragment key={index}>
           <div
             className={`w-6 h-6 rounded-full cursor-pointer ${activeColor(index)}`}
-            onClick={() => handleStepClick(index)}
+            // onClick={() => handleStepClick(index)}
           ></div>
           {!isFinalStep(index) && (
             <div className={`w-12 h-1 ${activeColor(index)}`}></div>

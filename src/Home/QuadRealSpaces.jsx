@@ -11,6 +11,7 @@ import img3 from "../assets/img3.jpg"
 import img4 from "../assets/img4.jpg"
 import img5 from "../assets/img5.jpg"
 import { Grid } from '@mui/material';
+import { motion } from "framer-motion"
 
 const QuadRealSpaces = () => {
 
@@ -63,56 +64,113 @@ const QuadRealSpaces = () => {
     return (
 
         <>
-       
+
             <div className='flex flex-col items-center'>
-                <p className='whatIs'>What is QuadReal Spaces?</p>
-                <p className='custom'>A custom tailored space management solution, providing our
-                    tenants with valuable insights and controls for their spaces.</p>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 100,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            duration: 1,
+                        },
+                    }}
+                    viewport={{ once: true }}
+                // style={{ padding: '3rem 0' }}
+
+                >
+                    <p className='whatIs'>What is QuadReal Spaces?</p>
+                </motion.div>
+
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 100,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            duration: 1,
+                        },
+                    }}
+                    viewport={{ once: true }}
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100%',
+                    }}
+
+                >
+                    <p className='custom'>A custom tailored space management solution, providing our
+                        tenants with valuable insights and controls for their spaces.</p>
+                </motion.div>
             </div>
             <TabContext value={value} >
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            y: 100,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 1,
+                            },
+                        }}
+                        viewport={{ once: true }}
+                    // style={{ padding: '3rem 0' }}
 
-                    <TabList
-                        onChange={handleChange}
-                        variant="scrollable"
-                        scrollButtons="auto"
                     >
-                        <Tab
-                            label="Feature 1"
-                            value="1"
-                            className={value === '1' ? 'featuresBtn' : 'nonSelected'}
-                        />
-                        <Tab
-                            label="Feature 2"
-                            value="2"
-                            className={value === '2' ? 'featuresBtn' : 'nonSelected'}
-                        />
-                        <Tab
-                            label="Feature 3"
-                            value="3"
-                            className={value === '3' ? 'featuresBtn' : 'nonSelected'}
-                        />
-                        <Tab
-                            label="Feature 4"
-                            value="4"
-                            className={value === '4' ? 'featuresBtn' : 'nonSelected'}
-                        />
-                        <Tab
-                            label="Feature 5"
-                            value="5"
-                            className={value === '5' ? 'featuresBtn' : 'nonSelected'}
-                        />
+                        <TabList
+                            onChange={handleChange}
+                            variant="scrollable"
+                            scrollButtons="auto"
+                        >
 
-                    </TabList>
+                            <Tab
+                                label="Feature 1"
+                                value="1"
+                                className={value === '1' ? 'featuresBtn' : 'nonSelected'}
+                            />
+                            <Tab
+                                label="Feature 2"
+                                value="2"
+                                className={value === '2' ? 'featuresBtn' : 'nonSelected'}
+                            />
+                            <Tab
+                                label="Feature 3"
+                                value="3"
+                                className={value === '3' ? 'featuresBtn' : 'nonSelected'}
+                            />
+                            <Tab
+                                label="Feature 4"
+                                value="4"
+                                className={value === '4' ? 'featuresBtn' : 'nonSelected'}
+                            />
+                            <Tab
+                                label="Feature 5"
+                                value="5"
+                                className={value === '5' ? 'featuresBtn' : 'nonSelected'}
+                            />
+
+                        </TabList>
+                    </motion.div>
                 </div>
                 <TabPanel value={value}>
                     <Box
+
                         sx={{
                             boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
                             maxHeight: '442px',
                             overflow: 'auto'
                         }}>
-
 
                         {tabContent
                             .filter((tab) => tab.value === value)
@@ -121,8 +179,20 @@ const QuadRealSpaces = () => {
                                     <Grid container spacing={3} >
                                         <Grid item xs={12} md={6} display="flex" justifyContent="center">
                                             {/* <div style={{ borderLeft: `5px solid ${tabContent.find(tab => tab.value === value)?.color}`}}> */}
-
-                                            <div
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    x: -200,
+                                                }}
+                                                animate={{
+                                                    opacity: 1,
+                                                    x: 0,
+                                                    backgroundColor: tabContent.find(tab => tab.value === value)?.color,
+                                                    transition: {
+                                                        duration: 1,
+                                                    },
+                                                }}
+                                                viewport={{ once: true }}
                                                 className='bgStyle'
                                                 style={{
                                                     position: 'absolute',
@@ -130,21 +200,82 @@ const QuadRealSpaces = () => {
                                                     top: 0,
                                                     height: '100%',
                                                     width: '15%',
-                                                    backgroundColor: tabContent.find(tab => tab.value === value)?.color  // Set the background color dynamically based on the selected tab
                                                 }}
-                                            />
-                                            <img src={content.image} style={{
-                                                width: '100%',
-                                                maxHeight: 'auto', borderRadius: '10px',
-                                                filter: ' drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px)',
-                                                objectFit: 'cover'
-                                            }} />
-                                            {/* </div> */}
+                                            >
+
+                                            </motion.div>
+
+                                            {/* image */}
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    x: -100,
+                                                }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    x: 0,
+                                                    transition: {
+                                                        duration: 1,
+                                                    },
+                                                }}
+                                                viewport={{ once: true }}
+                                            >
+                                                <motion.img
+                                                    src={content.image}
+                                                    alt="Your Image"
+                                                    style={{
+                                                        width: '100%',
+                                                        maxHeight: 'auto',
+                                                        borderRadius: '10px',
+                                                        filter: ' drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px)',
+                                                        objectFit: 'cover',
+                                                    }}
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    transition={{ duration: 1 }}
+                                                />
+                                            </motion.div>
+
                                         </Grid>
                                         <Grid item xs={12} md={6} display="flex" flexDirection="column"
                                             justifyContent="center" className='flex-wrap'>
-                                            <p className='contentHeading'>{content.heading}</p>
-                                            <p className='contentText'>{content.text}</p>
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    y: 100,
+                                                }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    transition: {
+                                                        duration: 1,
+                                                    },
+                                                }}
+                                                viewport={{ once: true }}
+                                            // style={{ padding: '3rem 0' }}
+
+                                            >
+                                                <p className='contentHeading'>{content.heading}</p>
+                                            </motion.div>
+
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    y: 100,
+                                                }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    transition: {
+                                                        duration: 1,
+                                                    },
+                                                }}
+                                                viewport={{ once: true }}
+                                            // style={{ padding: '3rem 0' }}
+
+                                            >
+                                                <p className='contentText'>{content.text}</p>
+                                            </motion.div>
                                         </Grid>
                                     </Grid>
                                 </div>

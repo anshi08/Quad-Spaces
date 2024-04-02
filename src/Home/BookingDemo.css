@@ -99,8 +99,10 @@
   @media (max-width:600px) {
      .welcome{
         font-size: 8px;
+        line-height: normal;
      } 
      .dashboard{
         font-size: 8px;
+        line-height: normal;
      }
   }

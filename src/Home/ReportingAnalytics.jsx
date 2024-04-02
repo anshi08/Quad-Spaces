@@ -12,102 +12,265 @@ import Occupancy from "../assets/Occupancy.svg"
 import Departments from "../assets/Departments.svg"
 import ArrowIcon from "../assets/ArrowIcon.svg"
 import ChildComponent from './ChildComponent';
+import { motion } from "framer-motion"
 
 const ReportingAnalytics = () => {
 
     const [clickedCard, setClickedCard] = useState(false);
-    
 
-    const [open,setOpen]=useState(true)
-    
+
+    const [open, setOpen] = useState(true)
+
 
     const handleCardClick = (cardName) => {
         if (clickedCard === cardName) {
             setOpen(!open);
         } else {
             setClickedCard(cardName); //Different
-            setOpen(false); 
+            setOpen(false);
         }
     };
 
     return (
         <>
-            {open ? 
-            <>
+            {open ?
+                <>
 
 
-            <div>
-                <div className='flex justify-center flex-col items-center'>
-                    <p className='reporting'>Reporting Analytics</p>
-                    <p className='clickMore'>Click below to learn more</p>
-                </div>
-                <Grid container spacing={2} padding={3} >
+                    <div>
+                        <div className='flex justify-center flex-col items-center'>
+                            <motion.div
+                                initial={{
+                                    opacity: 0,
+                                    y: 100,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 1,
+                                    },
+                                }}
+                                viewport={{ once: true }}
+                            // style={{ padding: '3rem 0' }}
 
-                    {/* Left Image */}
-                    <Grid item xs={12} md={4} >
-                        <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                            <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Occupancy')}>
-                                <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-                                    <img src={Occupancy} className='my-3' />
-                                    <p className='cardText my-3'>
-                                        Occupancy
-                                    </p>
-                                    <img src={ArrowIcon} className='my-3' />
-                                </CardContent>
-                                {/* <CardActions>
-                                    <Button size="small">Learn More</Button>
-                                </CardActions> */}
-                            </Card>
-                        </Box>
-                    </Grid>
+                            >
+                                <p className='reporting'>Reporting Analytics</p>
+                            </motion.div>
 
-                    <Grid item xs={12} md={4}>
-                        <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                            <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Meeting Rooms')} >
-                                {/* Middle Image */}
-                                <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-                                    <img src={MeetingRoom} className='my-3' />
-                                    <p className='cardText my-3'>
-                                        Meeting Rooms
-                                    </p>
-                                    <img src={ArrowIcon} className='my-3' />
-                                </CardContent>
-                                {/* <CardActions>
-                                    <Button size="small">Learn More</Button>
-                                </CardActions> */}
-                            </Card>
-                        </Box>
-                    </Grid>
+                            <motion.div
+                                initial={{
+                                    opacity: 0,
+                                    y: 100,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 1,
+                                    },
+                                }}
+                                viewport={{ once: true }}
+                            // style={{ padding: '3rem 0' }}
 
-                    {/* Right Image */}
-                    <Grid item xs={12} md={4} >
-                        <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                            <Card variant="outlined" 
-                            style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                            onClick={() => handleCardClick('Departments')}>
-                                <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-                                    <img src={Departments} className='my-3' /> {/* Adjust the size of the icon as needed */}
-                                    <p className='cardText my-3' >
-                                        Departments
-                                    </p>
-                                    <img src={ArrowIcon} className='my-3' />
-                                </CardContent>
-                                {/* <CardActions>
-                                    <Button size="small">Learn More</Button>
-                                </CardActions> */}
-                            </Card>
-                        </Box>
-                        {/* <img src={svgImage} style={{right: '-60%', top: '-30%', position:'relative',zIndex:'-1' }}  /> */}
-                    </Grid>
-                </Grid>
-            </div>
-            </>
-            :
+                            >
+                                <p className='clickMore'>Click below to learn more</p>
+                            </motion.div>
+                        </div>
 
-            <>
-            {clickedCard && <ChildComponent cardName={clickedCard} setOpen={setOpen} 
-            open={open} />}
-            </>}
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                y: 100,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                    duration: 1,
+                                },
+                            }}
+                            viewport={{ once: true }}
+                        // style={{ padding: '3rem 0' }}
+
+                        >
+                            <Grid container spacing={2} padding={3} >
+
+
+
+                                {/* Left Image */}
+                                <Grid item xs={12} md={4} >
+                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                        <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Occupancy')}>
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={Occupancy} />
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <p className='cardText'>
+                                                        Occupancy
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={ArrowIcon} />
+                                                </motion.div>
+                                            </CardContent>
+                                        </Card>
+                                    </Box>
+
+                                </Grid>
+
+                                <Grid item xs={12} md={4}>
+                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                        <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Meeting Rooms')} >
+                                            {/* Middle Image */}
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={MeetingRoom} />
+                                                </motion.div>
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <p className='cardText'>
+                                                        Meeting Rooms
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={ArrowIcon} />
+                                                </motion.div>
+                                            </CardContent>
+
+                                        </Card>
+                                    </Box>
+                                </Grid>
+
+                                {/* Right Image */}
+                                <Grid item xs={12} md={4} >
+                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                        <Card variant="outlined"
+                                            style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                            onClick={() => handleCardClick('Departments')}>
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={Departments} />
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <p className='cardText' >
+                                                        Departments
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 100,
+                                                    }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                    }}
+                                                    className='my-3'
+                                                >
+                                                    <img src={ArrowIcon} />
+                                                </motion.div>
+                                            </CardContent>
+                                        </Card>
+                                    </Box>
+                                    {/* <img src={svgImage} style={{right: '-60%', top: '-30%', position:'relative',zIndex:'-1' }}  /> */}
+                                </Grid>
+                            </Grid>
+                        </motion.div>
+                    </div>
+                </>
+                :
+
+                <>
+                    {clickedCard && <ChildComponent cardName={clickedCard} setOpen={setOpen}
+                        open={open} />}
+                </>}
         </>
     )
 }

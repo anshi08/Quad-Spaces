@@ -7,6 +7,7 @@ import closeButtonIcon from "../assets/closeButtonIcon.svg"; // Import your clos
 import "./ChildComponent.css"
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { motion } from "framer-motion"
 
 const modalItems = [
   {
@@ -36,6 +37,7 @@ const ChildComponent = (props) => {
 
   const [button, setButton] = useState([])
   const [data, setData] = useState([]);
+  
 
   useEffect(() => {
     if (props.cardName) {
@@ -53,10 +55,10 @@ const ChildComponent = (props) => {
   }, [props.cardName]);
 
   const handleNext = (cardTitle) => {
-     setData(modalItems.filter((nextItem) => nextItem.title === cardTitle))
-     setButton(modalItems.filter((nextButton) => nextButton.title !== cardTitle));
+    setData(modalItems.filter((nextItem) => nextItem.title === cardTitle))
+    setButton(modalItems.filter((nextButton) => nextButton.title !== cardTitle));
   }
-  
+
   const handlePrev = (cardTitle) => {
     setData(modalItems.filter((prevItem) => prevItem.title === cardTitle))
     setButton(modalItems.filter((prevButton) => prevButton.title !== cardTitle));
@@ -86,22 +88,93 @@ const ChildComponent = (props) => {
           <Grid container >
             {data.map((item) => (
               <React.Fragment key={item.id}>
-                <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center" padding='2rem'>
+                <Grid item xs={12} md={5} display="flex" justifyContent="center" alignItems="center" padding='2rem'>
                   <div>
-                    <p className='title'>{item.title}</p>
-                    <p className='titleText'>
-                      {item.para}
-                    </p>
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 100,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 1,
+                        },
+                      }}
+                      viewport={{ once: true }}
+
+
+                    >
+                      <p className='title'>{item.title}</p>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 100,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 1,
+                        },
+                      }}
+                      viewport={{ once: true }}
+                    // style={{ padding: '3rem 0' }}
+
+                    >
+                      <p className='titleText'>
+                        {item.para}
+                      </p>
+                    </motion.div>
                   </div>
                 </Grid>
 
                 {/* Background */}
-                <Grid item xs={12} md={6} className="background" style={{ backgroundColor: item.color }}></Grid>
+                < div className="background">
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      x: 100,
+                      backgroundColor: 'transparent',
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                      backgroundColor: item.color,
+                      transition: {
+                        duration: 1,
+                      },
+                    }}
+                    viewport={{ once: true }}
+                    style={{ width: '100%', height: '100%' }}
+                  >
+                    {/* Content */}
+                  </motion.div>
+                </div>
 
 
                 {/* Image */}
-                <Grid item xs={12} md={6} className="imgContainer">
+
+                <Grid item xs={12} md={7} className="imgContainer">
+                <motion.div
+                initial={{
+                  opacity: 0,
+                  x: 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }}
+                viewport={{ once: true }}>
+
                   <img src={item.img} alt="Occupancy" className='imgsrc' />
+                  </motion.div>
                 </Grid>
               </React.Fragment>
             ))}
@@ -119,7 +192,7 @@ const ChildComponent = (props) => {
           <div className='mt-4' key={button[0].id}>
             <div className='flex justify-between p-4 cursor-pointer' >
 
-              <p className='btns' onClick={()=> handlePrev(button[button.length - 1].title)}>
+              <p className='btns' onClick={() => handlePrev(button[button.length - 1].title)}>
                 <NavigateBeforeIcon style={{ color: 'rgb(14, 103, 98)', fontSize: '2rem' }} /> {button[button.length - 1].title}
               </p>
 

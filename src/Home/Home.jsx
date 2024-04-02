@@ -17,11 +17,6 @@ const Home = () => {
 
     return (
         <>
-
-            {/* <div className='relative' >
-                <img src={svgImage} className='svgImage' style={{border:'2px solid red'}} />
-            </div> */}
-
             <div className="blurrable">
                 <QuadRealText />
             </div>
