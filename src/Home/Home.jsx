@@ -20,7 +20,8 @@ const Home = () => {
             <div className="blurrable overflow-hidden">
                 <QuadRealText />
             </div>
-            <div style={{ padding: '2rem', marginTop: '2rem' }} className="blurrable " id='target-component'>
+            <div style={{ padding: '2rem', marginTop: '2rem' }} className="blurrable" 
+            id='target-component'>
                 <QuadRealSpaces />
             </div>
             <div style={{ marginTop: '2rem' }} className="blurrable">

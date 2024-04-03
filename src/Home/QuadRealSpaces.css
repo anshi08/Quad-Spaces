@@ -99,3 +99,8 @@
     }
 }
 
+.FeatureImage {
+    position: absolute;
+    right: -25%; /* Adjust the value as needed */
+    z-index: 1;
+  }

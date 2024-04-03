@@ -11,7 +11,8 @@ import img3 from "../assets/img3.jpg"
 import img4 from "../assets/img4.jpg"
 import img5 from "../assets/img5.jpg"
 import { Grid } from '@mui/material';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import svgImage from "../assets/image (1).svg";
 
 const QuadRealSpaces = () => {
 
@@ -163,14 +164,16 @@ const QuadRealSpaces = () => {
                         </TabList>
                     </motion.div>
                 </div>
-                <TabPanel value={value}>
+                <TabPanel value={value} className='relative'>
                     <Box
 
                         sx={{
                             boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
                             maxHeight: '442px',
-                            overflow: 'auto'
+                            overflow: 'auto',
+                            
                         }}>
+                            
 
                         {tabContent
                             .filter((tab) => tab.value === value)
@@ -190,7 +193,7 @@ const QuadRealSpaces = () => {
                                                     backgroundColor: tabContent.find(tab => tab.value === value)?.color,
                                                     transition: {
                                                         duration: 1,
-                                                    },
+                                                    },  
                                                 }}
                                                 viewport={{ once: true }}
                                                 className='bgStyle'
@@ -281,6 +284,8 @@ const QuadRealSpaces = () => {
                                 </div>
                             ))}
                     </Box>
+                    {/* <img src={svgImage} className='FeatureImage'/> */}
+               
                 </TabPanel>
             </TabContext>
 

@@ -169,6 +169,25 @@
   }
 }
 
+.spaceSvgImg{
+    left: -24% !important; 
+    top: -36% !important;
+    z-index: -1 !important;
+}
+
+@media (max-width:690px){
+  .spaceSvgImg{
+    left: -40% !important; 
+    top: -6% !important;
+  }
+}
+
+@media (max-width:440px){
+  .spaceSvgImg{
+    left: -60% !important;
+  } 
+}
+
   
 
   

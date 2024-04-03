@@ -19,10 +19,8 @@ const SpaceMgt = () => {
             <Grid container position="relative">
 
                 {/* partially image in out */}
-                <img src={svgImage} className='absolute' style={{
-                    left: '-24%', top: '-36%',
-                    zIndex: '-1'
-                }} />
+                <img src={svgImage} className='absolute spaceSvgImg' 
+                />
 
                 <Grid item xs={0} md={1} >
                 </Grid>
