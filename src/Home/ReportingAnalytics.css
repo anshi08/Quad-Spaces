@@ -45,3 +45,10 @@
   .card-root:hover {
     transform: translateY(-10px);
   }
+
+  .reportSVG{
+    right: -85%;
+    top: -25%;
+    position:relative;
+    z-index:-1;
+  }

@@ -9,6 +9,7 @@ import { useState } from 'react'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { motion } from "framer-motion"
+import svgImage from "../assets/image (1).svg";
 
 const items = [
     {
@@ -38,7 +39,8 @@ const Integrations = () => {
     };
     return (
         <>
-            <div>
+            <div style={{position:'relative'}}>
+            <img src={svgImage} className='intSvg'/>
                 <div style={{ padding: '2rem', marginTop: '3rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                     <motion.div
                         initial={{
@@ -126,9 +128,11 @@ const Integrations = () => {
                 </div>
                 {currentItem && (
                     <Box className='BoxStyle' >
-                        <Card className='p-16' style={{
+                        
+                        <Card className='cardStyle' style={{
                             boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
-                            borderRadius: '10px'
+                            borderRadius: '10px',
+                            // padding: '4rem 8rem 1rem'
                         }}>
                             <motion.div
                                 initial={{
@@ -163,7 +167,7 @@ const Integrations = () => {
                                             },
                                         }}
                                         viewport={{ once: true }}
-
+                                        style={{padding:'0 1rem'}}
 
                                     >
                                         <p className='quote flex flex-wrap'>{currentItem.quote}</p>
@@ -193,7 +197,7 @@ const Integrations = () => {
                             />
 
 
-                            <div>
+                            <div className='intNameAndDesg'>
                             <motion.div
                                 initial={{
                                     opacity: 0,

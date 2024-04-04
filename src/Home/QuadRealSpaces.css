@@ -101,6 +101,52 @@
 
 .FeatureImage {
     position: absolute;
-    right: -25%; /* Adjust the value as needed */
-    z-index: 1;
+    right: -24%; /* Adjust the value as needed */
+    z-index: -1;
+    top:6%
   }
+
+  @media (max-width:1080px){
+    .FeatureImage{
+        right: -30%;
+        top: 3%;
+        width: 35%;
+    }
+  }
+
+  @media (max-width:610px){
+  
+    .FeatureImage {
+        right: -39%;
+        top: 8%;
+        width: 50%;
+      }
+}
+
+@media (max-width:470px){
+  
+    .FeatureImage {
+        right: -75%;
+        top: 8%;
+        width: 100%;
+      }
+}
+
+  .css-1h4epmm-MuiPaper-root-MuiCard-root{
+    border-radius: 0 !important;
+  }
+
+  /* Default styles for TabList */
+.tab-list {
+    display: flex !important;
+    /* flex-wrap: wrap !important;
+    overflow-x: auto; */
+  }
+  
+  /* Media query for small screens (e.g., mobile devices) */
+  @media (max-width: 600px) {
+    .tab-list {
+      flex-direction: column !important; /* Change direction to column for small screens */
+    }
+  }
+  

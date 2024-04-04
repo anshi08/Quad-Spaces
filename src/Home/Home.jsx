@@ -20,14 +20,14 @@ const Home = () => {
             <div className="blurrable overflow-hidden">
                 <QuadRealText />
             </div>
-            <div style={{ padding: '2rem', marginTop: '2rem' }} className="blurrable" 
+            <div style={{ padding: '2rem', marginTop: '2rem' }} className="blurrable overflow-x-clip" 
             id='target-component'>
                 <QuadRealSpaces />
             </div>
             <div style={{ marginTop: '2rem' }} className="blurrable">
                 <SpaceMgt />
             </div>
-            <div style={{ marginTop: '3rem' ,padding:'2rem'}}>
+            <div style={{ marginTop: '3rem' ,padding:'2rem'}} className='overflow-x-clip'>
                 <ReportingAnalytics />
             </div>
             <div style={{  backgroundColor:'rgb(241, 248, 248)' }} className="blurrable">

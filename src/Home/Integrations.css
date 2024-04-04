@@ -2,7 +2,8 @@
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     src: url('../Fonts/gothampro-bold.woff') format('woff');
 }
-.integrations{
+
+.integrations {
     font-weight: 400;
     font-style: normal;
     font-size: 36px;
@@ -13,10 +14,11 @@
 }
 
 @font-face {
-    font-family: "Gotham Pro-Normal-EO0rZg56" ;
+    font-family: "Gotham Pro-Normal-EO0rZg56";
     src: url('../Fonts/gothampro.woff') format('woff');
 }
-.follow{
+
+.follow {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -27,11 +29,12 @@
     opacity: 0.8;
 }
 
-.settingMargin{
-    margin-top: 10rem;
+.settingMargin {
+    margin-top: 9rem;
 }
+
 @media (max-width:562px) {
-    .settingMargin{
+    .settingMargin {
         margin-top: 5rem;
     }
 }
@@ -40,31 +43,50 @@
     font-family: "Gotham Pro-Normal-EO0rZg56";
     src: url('../Fonts/gothampro.woff') format('woff');
 }
-.quote{
+
+.quote {
     font-weight: 400;
     font-style: normal;
     opacity: 0.8;
     font-size: 24px;
     color: rgb(0, 0, 0);
     font-family: "Gotham Pro-Normal-EO0rZg56";
-    line-height: 38px;
+    line-height: 45px;
 }
 
-.BoxStyle{
-    padding: 4rem;
+.BoxStyle {
+    padding: 2rem 4rem;
 }
 
 
 @media (max-width:500px) {
-    .quote{
+    .quote {
         font-size: 10px;
         line-height: normal;
-    }  
-    .imgquote{
+    }
+
+    .imgquote {
         width: 10px;
     }
-    .BoxStyle{
+
+    .BoxStyle {
         padding: 1rem;
+    }
+}
+
+.intNameAndDesg{
+    padding: 0 5rem;
+}
+
+.cardStyle{
+     padding: 4rem 8rem 1rem;
+}
+@media (max-width:640px){
+    .cardStyle{
+        padding: 4rem;
+    }
+    .intNameAndDesg{
+        padding: 0;
     }
 }
 
@@ -73,7 +95,8 @@
     font-family: "Gotham Bold-Normal-NOG2AmOs";
     src: url('../Fonts/gotham-bold.woff') format('woff');
 }
-.name{
+
+.name {
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
@@ -85,21 +108,23 @@
 
 
 @media (max-width:320) {
-    .name{
+    .name {
         font-size: 15px;
         line-height: normal;
     }
-    .desg{
+
+    .desg {
         font-size: 15px;
         line-height: normal;
     }
 }
 
 @font-face {
-    font-family: "Gotham Book-Normal-UQFGSIgH" ;
+    font-family: "Gotham Book-Normal-UQFGSIgH";
     src: url('../Fonts/gotham-book.woff') format('woff');
 }
-.desg{
+
+.desg {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -114,11 +139,40 @@
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     src: url('../Fonts/gothampro-bold.woff') format('woff');
 }
-.pagination{
+
+.pagination {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    color:rgb(94,110,100);
+    color: rgb(94, 110, 100);
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     line-height: 29px;
+}
+
+.intSvg {
+    position: absolute;
+    top: 22%;
+    left: -20%;
+    z-index: -1;
+}
+
+@media (max-width:935px) {
+    .intSvg {
+        top: 18%;
+        left: -29%;
+    }
+}
+
+@media (max-width:625px){
+   .intSvg{
+    top: 14%;
+    left: -43%;
+   }
+}
+
+@media (max-width:460px){
+    .intSvg{
+        top: 24%;
+    left: -73%;
+    }
 }

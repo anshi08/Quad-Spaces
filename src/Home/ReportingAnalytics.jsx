@@ -206,7 +206,7 @@ const ReportingAnalytics = () => {
                                 </Grid>
 
                                 {/* Right Image */}
-                                <Grid item xs={12} md={4} >
+                                <Grid item xs={12} md={4}  >
                                     <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
                                         <Card variant="outlined"
                                             style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
@@ -259,7 +259,8 @@ const ReportingAnalytics = () => {
                                             </CardContent>
                                         </Card>
                                     </Box>
-                                    {/* <img src={svgImage} style={{right: '-60%', top: '-30%', position:'relative',zIndex:'-1' }}  /> */}
+                                    <img src={svgImage} 
+                                    className='reportSVG'  />
                                 </Grid>
                             </Grid>
                         </motion.div>

@@ -10,7 +10,7 @@ import img2 from "../assets/img2.jpg"
 import img3 from "../assets/img3.jpg"
 import img4 from "../assets/img4.jpg"
 import img5 from "../assets/img5.jpg"
-import { Grid } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import { motion } from "framer-motion";
 import svgImage from "../assets/image (1).svg";
 
@@ -65,7 +65,7 @@ const QuadRealSpaces = () => {
     return (
 
         <>
-
+           
             <div className='flex flex-col items-center'>
                 <motion.div
                     initial={{
@@ -111,6 +111,7 @@ const QuadRealSpaces = () => {
                         tenants with valuable insights and controls for their spaces.</p>
                 </motion.div>
             </div>
+
             <TabContext value={value} >
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
                     <motion.div
@@ -164,13 +165,15 @@ const QuadRealSpaces = () => {
                         </TabList>
                     </motion.div>
                 </div>
-                <TabPanel value={value} className='relative'>
-                    <Box
+                <TabPanel value={value} style={{position:'relative'}}>
+                    
+                    <Card
 
                         sx={{
                             boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
                             maxHeight: '442px',
                             overflow: 'auto',
+                            zIndex:999
                             
                         }}>
                             
@@ -187,6 +190,14 @@ const QuadRealSpaces = () => {
                                                     opacity: 0,
                                                     x: -200,
                                                 }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    x: 0,
+                                                    backgroundColor: tabContent.find(tab => tab.value === value)?.color,
+                                                    transition: {
+                                                        duration: 1,
+                                                    },  
+                                                }}
                                                 animate={{
                                                     opacity: 1,
                                                     x: 0,
@@ -195,6 +206,7 @@ const QuadRealSpaces = () => {
                                                         duration: 1,
                                                     },  
                                                 }}
+                                             
                                                 viewport={{ once: true }}
                                                 className='bgStyle'
                                                 style={{
@@ -202,7 +214,7 @@ const QuadRealSpaces = () => {
                                                     left: 0,
                                                     top: 0,
                                                     height: '100%',
-                                                    width: '15%',
+                                                    width: '10%',
                                                 }}
                                             >
 
@@ -255,7 +267,7 @@ const QuadRealSpaces = () => {
                                                     },
                                                 }}
                                                 viewport={{ once: true }}
-                                            // style={{ padding: '3rem 0' }}
+                                                style={{ zIndex:1}}
 
                                             >
                                                 <p className='contentHeading'>{content.heading}</p>
@@ -283,12 +295,13 @@ const QuadRealSpaces = () => {
                                     </Grid>
                                 </div>
                             ))}
-                    </Box>
-                    {/* <img src={svgImage} className='FeatureImage'/> */}
+                    </Card>
+                    <img src={svgImage} className="FeatureImage" />
+                    
                
                 </TabPanel>
             </TabContext>
-
+         
         </>
     )
 }

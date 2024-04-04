@@ -52,7 +52,11 @@
     font-size: 16px;
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     line-height: 26px;
+    border-radius: 0% !important;
+    border: 2px solid #0F6764 !important;
 }
+
+
 
 .inquireImage {
     mask-size: 100% !important;
