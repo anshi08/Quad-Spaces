@@ -8,7 +8,7 @@ const Inquire = () => {
   return (
     <Grid container>
       <Grid item xs={12} md={6} display="flex" alignItems="center" padding={12}>
-        <div className='flex flex-col'>
+        <div className='flex flex-col textAlignCss' >
 
           <motion.div
             initial={{
@@ -89,7 +89,7 @@ const Inquire = () => {
             },
           }}
           viewport={{ once: true }}
-          style={{ width: '100%', height: '100%', zIndex: -1 }}
+          style={{ width: '100%', height: '100%', zIndex: -1 , marginLeft:'10%'}}
         >
           <div style={{
 

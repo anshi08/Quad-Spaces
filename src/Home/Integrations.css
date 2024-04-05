@@ -40,8 +40,8 @@
 }
 
 @font-face {
-    font-family: "Gotham Pro-Normal-EO0rZg56";
-    src: url('../Fonts/gothampro.woff') format('woff');
+    font-family: "Gotham Pro-Light-OKUPLJS1";
+    src: url('../Fonts/gothampro-light.woff') format('woff');
 }
 
 .quote {
@@ -50,8 +50,8 @@
     opacity: 0.8;
     font-size: 24px;
     color: rgb(0, 0, 0);
-    font-family: "Gotham Pro-Normal-EO0rZg56";
-    line-height: 45px;
+    font-family:  "Gotham Pro-Light-OKUPLJS1";
+    line-height: 38px;
 }
 
 .BoxStyle {
@@ -71,6 +71,13 @@
 
     .BoxStyle {
         padding: 1rem;
+    }
+    .name{
+        font-size: 15px !important;
+    }
+    .desg{
+        font-size: 15px !important;
+        line-height: normal !important;
     }
 }
 
@@ -133,6 +140,7 @@
     font-family: "Gotham Book-Normal-UQFGSIgH";
     text-align: left;
     line-height: 29px;
+    margin-bottom: 6%;
 }
 
 @font-face {

@@ -5,7 +5,8 @@
 .workplace{
     font-weight: 400;
     font-style: normal;
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 40px;
     color: rgb(0, 0, 0);
     font-family: "Gotham Pro-Normal-EO0rZg56";
     line-height: 55px;
@@ -14,10 +15,17 @@
     position: relative;
 }
 
+.css-mhc70k-MuiGrid-root {
+    margin-left: -2% !important;
+ }
+
 @media (max-width:350px) {
     .workplace{
     font-size: 25px;
     line-height: normal;
+    }
+    .css-mhc70k-MuiGrid-root {
+        margin-left: -5% !important;
     }
 }
 
@@ -126,10 +134,11 @@
 }
 
 
-.css-mhc70k-MuiGrid-root>.MuiGrid-item {
+/* .css-mhc70k-MuiGrid-root>.MuiGrid-item {
     padding-left: 0px !important;
-}
+} */
 
 .mgtImg{
     mix-blend-mode: normal;
 }
+

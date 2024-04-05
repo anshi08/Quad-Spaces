@@ -107,7 +107,7 @@ const QuadRealSpaces = () => {
                     }}
 
                 >
-                    <p className='custom'>A custom tailored space management solution, providing our
+                    <p className='custom my-4'>A custom tailored space management solution, providing our
                         tenants with valuable insights and controls for their spaces.</p>
                 </motion.div>
             </div>
@@ -214,7 +214,7 @@ const QuadRealSpaces = () => {
                                                     left: 0,
                                                     top: 0,
                                                     height: '100%',
-                                                    width: '10%',
+                                                    width: '11%',
                                                 }}
                                             >
 
@@ -234,13 +234,14 @@ const QuadRealSpaces = () => {
                                                     },
                                                 }}
                                                 viewport={{ once: true }}
+                                                style={{display:'flex',justifyContent:'center',alignItems:'center'}}
                                             >
                                                 <motion.img
                                                     src={content.image}
                                                     alt="Your Image"
                                                     style={{
                                                         width: '100%',
-                                                        maxHeight: 'auto',
+                                                        maxHeight: '90%',
                                                         borderRadius: '10px',
                                                         filter: ' drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px)',
                                                         objectFit: 'cover',

@@ -98,7 +98,7 @@ const Integrations = () => {
                 // style={{ padding: '3rem 0' }}
 
                 >
-                    <div className='flex justify-evenly flex-wrap'>
+                    <div className='flex justify-evenly flex-wrap' style={{padding:'0 15%'}}>
                         <img src={workday} style={{ width: '144px', height: '56px' }} />
                         <img src={MS} style={{ width: '236px', height: '66px' }} />
                         <img src={outlook} style={{ width: '183px', height: '66px' }} />
@@ -167,7 +167,7 @@ const Integrations = () => {
                                             },
                                         }}
                                         viewport={{ once: true }}
-                                        style={{padding:'0 1rem'}}
+                                        style={{padding:'0 0 0 1rem'}}
 
                                     >
                                         <p className='quote flex flex-wrap'>{currentItem.quote}</p>
@@ -178,7 +178,7 @@ const Integrations = () => {
 
                             {/* hr line */}
                             <motion.hr
-                                className='mt-12 mb-12'
+                                className='my-6'
                                 style={{
                                     border: '2px solid rgb(139, 189, 189)',
                                     width: '0', 

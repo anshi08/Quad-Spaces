@@ -86,11 +86,11 @@ const QuadRealText = () => {
                                 <p className='workplace my-4'>An intuitive workplace experience platform</p>
                             </motion.div>
 
-                            <Grid container spacing={2}>
+                            <Grid container spacing={2} className='Gridclass'>
                                 <Grid item xs={12} md={6} className='stylingPadding'>
 
                                     <div className='flex my-4'>
-                                        <img src={img2} style={{ width: '50px', height: '50px' }}
+                                        <img src={img2} style={{ width: '45px', height: '45px' }}
                                          alt="Avatar" className='mgtImg'/>
                                         <motion.div
                                             initial={{
@@ -107,11 +107,11 @@ const QuadRealText = () => {
                                             viewport={{ once: true }}
                                         >
 
-                                            <p className='space mx-3'>Flexible space management platform for Facilities management</p>
+                                            <p className='space mx-2'>Flexible space management platform for Facilities management</p>
                                         </motion.div>
                                     </div>
                                     <div className='flex my-4'>
-                                        <img src={img4} style={{ width: '50px', height: '50px' }} alt="Avatar" />
+                                        <img src={img4} style={{ width: '45px', height: '45px' }} alt="Avatar" />
                                         <motion.div
                                             initial={{
                                                 opacity: 0,
@@ -126,7 +126,7 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='RealTime mx-3'>Real-time occupancy layers to understand how teams utilize your spaces and meeting rooms</p>
+                                            <p className='RealTime mx-2'>Real-time occupancy layers to understand how teams utilize your spaces and meeting rooms</p>
                                         </motion.div>
                                     </div>
 
@@ -134,7 +134,7 @@ const QuadRealText = () => {
 
                                 <Grid item xs={12} md={6}>
                                     <div className='flex my-4'>
-                                        <img src={img3} style={{ width: '50px', height: '50px' }} alt="Avatar" />
+                                        <img src={img3} style={{ width: '45px', height: '45px' }} alt="Avatar" />
 
                                         <motion.div
                                             initial={{
@@ -150,11 +150,11 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='booking mx-3'>Space booking platform for desks, meeting rooms, and common spaces</p>
+                                            <p className='booking mx-2'>Space booking platform for desks, meeting rooms, and common spaces</p>
                                         </motion.div>
                                     </div>
                                     <div className='flex my-4'>
-                                        <img src={img1} style={{ width: '50px', height: '50px' }} alt="Avatar" />
+                                        <img src={img1} style={{ width: '45px', height: '45px' }} alt="Avatar" />
                                         <motion.div
                                             initial={{
                                                 opacity: 0,
@@ -169,7 +169,7 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='Data mx-3'>Data and analytics dashboard with valuable insights</p>
+                                            <p className='Data mx-2'>Data and analytics dashboard with valuable insights</p>
                                         </motion.div>
                                     </div>
                                 </Grid>
