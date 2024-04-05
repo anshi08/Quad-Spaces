@@ -67,6 +67,7 @@ const ChildComponent = (props) => {
   return (
     <>
 
+<div>
       <div style={{ position: 'relative' }}>
 
         {/* Cross Button */}
@@ -140,6 +141,14 @@ const ChildComponent = (props) => {
                       x: 100,
                       backgroundColor: 'transparent',
                     }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                      backgroundColor: item.color,
+                      transition: {
+                        duration: 1,
+                      },
+                    }}
                     animate={{
                       opacity: 1,
                       x: 0,
@@ -165,6 +174,13 @@ const ChildComponent = (props) => {
                   x: 100,
                 }}
                 whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }}
+                animate={{
                   opacity: 1,
                   x: 0,
                   transition: {
@@ -205,6 +221,7 @@ const ChildComponent = (props) => {
 
         )}
       </>
+      </div>
     </>
   )
 }
