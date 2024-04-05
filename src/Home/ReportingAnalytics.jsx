@@ -101,8 +101,10 @@ const ReportingAnalytics = () => {
                                 {/* Left Image */}
                                 <Grid item xs={12} md={4} >
                                     <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
-                                        <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Occupancy')}>
-                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                        <Card variant="outlined" style={{ padding: '2rem' }} 
+                                        onClick={() => handleCardClick('Occupancy' )}>
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', 
+                                            justifyContent: 'center', flexDirection: 'column',cursor:'pointer' }}>
                                                 <motion.div
                                                     initial={{
                                                         opacity: 0,
@@ -156,7 +158,8 @@ const ReportingAnalytics = () => {
                                     <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
                                         <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Meeting Rooms')} >
                                             {/* Middle Image */}
-                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', 
+                                            justifyContent: 'center', flexDirection: 'column',cursor:'pointer' }}>
                                                 <motion.div
                                                     initial={{
                                                         opacity: 0,
@@ -211,7 +214,8 @@ const ReportingAnalytics = () => {
                                         <Card variant="outlined"
                                             style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                             onClick={() => handleCardClick('Departments')}>
-                                            <CardContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                                            <CardContent style={{ display: 'flex', alignItems: 'center', 
+                                            justifyContent: 'center', flexDirection: 'column',cursor:'pointer' }}>
 
                                                 <motion.div
                                                     initial={{

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    src: url('../Fonts/gothampro.woff') format('woff');
+}
+.steps{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-family: "Gotham Pro-Normal-EO0rZg56";
+    line-height: 26px;
+    margin-bottom: 4rem;
+    opacity: 0.8;
+}
