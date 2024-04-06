@@ -107,9 +107,9 @@
      }
   }
 
-  .container.demo-started .image-stack__item--bottom img {
+  /* .container.demo-started .image-stack__item--bottom img {
     filter: brightness(70%);
-  }
+  } */
 
    .image-stack__item--bottom {
     position: relative;

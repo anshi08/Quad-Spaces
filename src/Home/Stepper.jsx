@@ -9,7 +9,7 @@ export default function Stepper({ numberOfSteps }) {
     setCurrentStep(index);
   };
 
-  const activeColor = (index) => (currentStep >= index ? 'bg-blue-500' : 'bg-my-white');
+  const activeColor = (index) => (currentStep >= index ? 'bg-my-green' : 'bg-my-white');
   const isFinalStep = (index) => index === numberOfSteps - 1;
 
   return (

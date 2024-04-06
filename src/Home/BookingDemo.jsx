@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BookingDemo.css';
 import img1 from '../assets/BookingDemo.png';
+import img2 from "../assets/Capture1.png";
+import img3 from "../assets/Capture2.png";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Stepper from './Stepper';
 import { motion } from 'framer-motion';
@@ -8,44 +10,62 @@ import Tooltip from '@mui/material/Tooltip';
 
 const BookingDemo = () => {
 
-  const img2 = 'https://quadreal-spaces.azurewebsites.net/media/8c84afe27b16d323e63e73d1099f2d07/screen-shot-2023-03-27-at-2-41-26-pm-quarter.png'
-  const img3 = 'https://quadreal-spaces.azurewebsites.net/media/6c6ea52e6627733215630948a2d3fc1e/screen-shot-2023-03-27-at-2-42-18-pm-quarter.png'
-  const img4 =  'https://quadreal-spaces.azurewebsites.net/media/a9656bbbb76ad8627ee5a907170b797d/screen-shot-2023-03-27-at-2-42-34-pm-quarter.png'
-
-  const images = [
-    img1,
-    img2,
-    img3,
-    img4
-  ];
  
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   
+  useEffect(() => {
+    const handleMouseOrTouchMove = (event) => {
+      // Check if the event is a touch event
+      const isTouchEvent = event.type.startsWith('touch');
+      
+      // Get the coordinates based on whether it's a mouse or touch event
+      const x = isTouchEvent ? event.touches[0].clientX : event.clientX;
+      const y = isTouchEvent ? event.touches[0].clientY : event.clientY;
+  
+      // Update state with the coordinates
+      setCoordinates({ x, y });
+    };
+  
+    // Attach the event listener for both mouse and touch events
+    window.addEventListener('mousemove', handleMouseOrTouchMove);
+    window.addEventListener('touchmove', handleMouseOrTouchMove);
+  
+    // Cleanup function to remove the event listeners when the component unmounts
+    return () => {
+      window.removeEventListener('mousemove', handleMouseOrTouchMove);
+      window.removeEventListener('touchmove', handleMouseOrTouchMove);
+    };
+  }, []);
+  
+
+ 
   const [demoStarted, setDemoStarted] = useState(false);
-  const [currentImage, setCurrentImage] = useState(images[0]);
-  const [tooltipTitle, setTooltipTitle] = useState('Click to reserve this seat.')
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [IsBtnClicked, setIsBtnClicked] = useState(false)
+  const [currentImage, setCurrentImage] = useState(img1);
+  // const [tooltipTitle, setTooltipTitle] = useState('Click to reserve this seat.')
+  // const [showTooltip, setShowTooltip] = useState(false);
+  // const [IsBtnClicked, setIsBtnClicked] = useState(false)
   const [isSideBoxVisible, setIsSideBoxVisible] = useState(true);
 
   const handleBeginDemo = () => {
     setDemoStarted(true);
-    setShowTooltip(true);
-    setIsBtnClicked(true)
+    // setShowTooltip(true);
+    setCurrentImage(img2)
+    // setIsBtnClicked(true)
     setIsSideBoxVisible(false);
   };
 
-  const handleTooltipClick = () => {
-    setShowTooltip(false);
-    setCurrentImage((prevImage) => {
-      const currentIndex = images.indexOf(prevImage);
-      const nextIndex = (currentIndex + 1) % images.length;
-      return images[nextIndex];
-    });
-    setTimeout(() => {
-      setTooltipTitle("Click here to create a new booking.")
-      setShowTooltip(true)
-    }, 1000);
-  };
+  const handleImageChange = () => {
+    setCurrentImage(img3)
+  }
+
+  // const handleTooltipClick = () => {
+  //   setShowTooltip(false);
+  //   setCurrentImage(img2)
+    // setTimeout(() => {
+    //   setTooltipTitle("Click here to create a new booking.")
+    //   setShowTooltip(true)
+    // }, 1000);
+  // };
 
 
   return (
@@ -117,16 +137,16 @@ const BookingDemo = () => {
             </div>
 
             <div className="image-stack__item image-stack__item--bottom"  >
-              <Tooltip
+              {/* <Tooltip
                 title={tooltipTitle}
                 open={showTooltip}
                 arrow
                 placement="right"
-                onClick={IsBtnClicked ? handleTooltipClick : undefined}
+                // onClick={IsBtnClicked ? handleTooltipClick : undefined}
                 className='MuiTooltip-popper[data-popper-placement*="right"] .css-1k51tf5-MuiTooltip-tooltip'
               >
-                <img src={currentImage} alt="" />
-              </Tooltip>
+              </Tooltip> */}
+                <img src={currentImage} alt="" onClick={handleImageChange}/>
             </div>
           </div>
         </div>
