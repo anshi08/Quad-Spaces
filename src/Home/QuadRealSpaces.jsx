@@ -173,7 +173,8 @@ const QuadRealSpaces = () => {
                             boxShadow: 'rgba(0, 0, 0, 0.15) 0px 2px 30px 0px',
                             maxHeight: '442px',
                             overflow: 'auto',
-                            zIndex:999
+                            zIndex:999,
+                            maxHeight:'500px'
                             
                         }}>
                             

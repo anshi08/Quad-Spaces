@@ -131,3 +131,8 @@
     color: black;
     /* padding: 1rem; */
 }
+
+.tooltipDesign{
+  position: absolute;
+  display: flex;
+}

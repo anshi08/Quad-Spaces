@@ -100,7 +100,7 @@ const ReportingAnalytics = () => {
 
                                 {/* Left Image */}
                                 <Grid item xs={12} md={4} >
-                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                    <Box  className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
                                         <Card variant="outlined" style={{ padding: '2rem' }} 
                                         onClick={() => handleCardClick('Occupancy' )}>
                                             <CardContent style={{ display: 'flex', alignItems: 'center', 
@@ -155,7 +155,7 @@ const ReportingAnalytics = () => {
                                 </Grid>
 
                                 <Grid item xs={12} md={4}>
-                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                    <Box className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
                                         <Card variant="outlined" style={{ padding: '2rem' }} onClick={() => handleCardClick('Meeting Rooms')} >
                                             {/* Middle Image */}
                                             <CardContent style={{ display: 'flex', alignItems: 'center', 
@@ -210,7 +210,7 @@ const ReportingAnalytics = () => {
 
                                 {/* Right Image */}
                                 <Grid item xs={12} md={4}  >
-                                    <Box sx={{ minWidth: 275 }} className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
+                                    <Box  className="card-root" style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 30px 0px" }}>
                                         <Card variant="outlined"
                                             style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                             onClick={() => handleCardClick('Departments')}>

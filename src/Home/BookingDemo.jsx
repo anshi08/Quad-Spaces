@@ -1,71 +1,120 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './BookingDemo.css';
 import img1 from '../assets/BookingDemo.png';
-import img2 from "../assets/Capture1.png";
-import img3 from "../assets/Capture2.png";
+import img2 from "../assets/BookingDemoImg2.png";
+import img3 from "../assets/BookingDemoImg3.png";
+import img4 from "../assets/BookingDemoImg4.png";
+import tooltip1 from "../assets/tooltip1.png";
+import tooltip2 from "../assets/tooltip2.png";
+import tooltip3 from "../assets/tooltip3.png";
+import tooltip4 from "../assets/tooltip4.png";
+import tooltip5 from "../assets/tooltip5.png";
+import tooltip6 from "../assets/tooltip6.png";
+import tooltip7 from "../assets/tooltip7.png";
+import tooltip8 from "../assets/tooltip8.png";
+import handImg from "../assets/hand1.png"
+import handimg2 from "../assets/hand2.png"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Stepper from './Stepper';
 import { motion } from 'framer-motion';
-import Tooltip from '@mui/material/Tooltip'; 
+
+
 
 const BookingDemo = () => {
 
- 
-  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
-  
-  useEffect(() => {
-    const handleMouseOrTouchMove = (event) => {
-      // Check if the event is a touch event
-      const isTouchEvent = event.type.startsWith('touch');
-      
-      // Get the coordinates based on whether it's a mouse or touch event
-      const x = isTouchEvent ? event.touches[0].clientX : event.clientX;
-      const y = isTouchEvent ? event.touches[0].clientY : event.clientY;
-  
-      // Update state with the coordinates
-      setCoordinates({ x, y });
-    };
-  
-    // Attach the event listener for both mouse and touch events
-    window.addEventListener('mousemove', handleMouseOrTouchMove);
-    window.addEventListener('touchmove', handleMouseOrTouchMove);
-  
-    // Cleanup function to remove the event listeners when the component unmounts
-    return () => {
-      window.removeEventListener('mousemove', handleMouseOrTouchMove);
-      window.removeEventListener('touchmove', handleMouseOrTouchMove);
-    };
-  }, []);
-  
-
- 
-  const [demoStarted, setDemoStarted] = useState(false);
   const [currentImage, setCurrentImage] = useState(img1);
-  // const [tooltipTitle, setTooltipTitle] = useState('Click to reserve this seat.')
-  // const [showTooltip, setShowTooltip] = useState(false);
-  // const [IsBtnClicked, setIsBtnClicked] = useState(false)
+  const [currentHandImage, setCurrentHandImage] = useState(handImg);
   const [isSideBoxVisible, setIsSideBoxVisible] = useState(true);
+  const [tooltipVisible, setTooltipVisible] = useState(false)
+  const [tooltipIndex, setTooltipIndex] = useState(0);
+  const [handVisible, setHandVisible] = useState(true);
+  const [applyFilter, setApplyFilter] = useState(false); // filter
 
-  const handleBeginDemo = () => {
-    setDemoStarted(true);
-    // setShowTooltip(true);
-    setCurrentImage(img2)
-    // setIsBtnClicked(true)
-    setIsSideBoxVisible(false);
-  };
 
-  const handleImageChange = () => {
-    setCurrentImage(img3)
+  const handleTooltip2Click = () => {
+    setHandVisible(true)
+    setCurrentHandImage(handimg2)
+    setTooltipIndex(2)
   }
 
-  // const handleTooltipClick = () => {
-  //   setShowTooltip(false);
-  //   setCurrentImage(img2)
-    // setTimeout(() => {
-    //   setTooltipTitle("Click here to create a new booking.")
-    //   setShowTooltip(true)
-    // }, 1000);
-  // };
+  const handleTooltip4Click = () => {
+    setHandVisible(true)
+    setCurrentHandImage(handimg2)
+    setTooltipIndex(4)
+  }
+
+  const handleTooltip5Click = () => {
+    setTooltipIndex(6)
+  }
+
+  const handleTooltip6Click = () => {
+    setHandVisible(true)
+    setCurrentHandImage(handimg2)
+    setTooltipIndex(7)
+  }
+
+  const tooltipImages = [tooltip1, tooltip2, tooltip3, tooltip4, tooltip5, tooltip6, tooltip7, tooltip8];
+  const tooltipPositions = [
+    { top: '29%', right: '26%' },
+    { top: '14%', right: '16%' },
+    { top: '33%', right: '16%' },
+    { top: '30%', right: '16%' },
+    { bottom: '0%', right: '16%' },
+    { top: '14%', right: '16%' },
+    { bottom: '10%', right: '16%' },
+    { top: '29%', right: '26%' },
+  ];
+
+  const tooltipClickHandlers = [
+    null,
+    handleTooltip2Click,
+    null,
+    handleTooltip4Click,
+    null,
+    handleTooltip5Click,
+    handleTooltip6Click
+  ];
+
+
+
+  const handleBeginDemo = () => {
+    setIsSideBoxVisible(false);
+    setTooltipVisible(true)
+    setApplyFilter(true)
+    setHandVisible(true)
+  };
+
+  const handleNextTooltip = () => {
+    if (applyFilter) {
+      setCurrentImage(img2);
+      setApplyFilter(false);
+    }
+    if (currentHandImage == handimg2) {
+      setCurrentImage(img3)
+    }
+    if (tooltipIndex == 4) {
+      setCurrentImage(img4)
+    }
+    if (tooltipIndex == 7) {
+      setCurrentImage(img1);
+      setIsSideBoxVisible(true);
+      setApplyFilter(false)
+      setTooltipVisible(false);
+      setHandVisible(false);
+      setCurrentHandImage(handImg)
+      setTooltipIndex(0);
+    }
+    else {
+      const newIndex = (tooltipIndex + 1) % tooltipImages.length;
+      setTooltipIndex(newIndex);
+      setTooltipVisible(true);
+      setHandVisible(false);
+    }
+    // const newIndex = (tooltipIndex + 1) % tooltipImages.length;
+    // setTooltipIndex(newIndex);
+    // setTooltipVisible(true);
+    // setHandVisible(false);
+  }
 
 
   return (
@@ -106,7 +155,7 @@ const BookingDemo = () => {
         </motion.div>
       </div>
       <div>
-        <div className={`container ${demoStarted ? 'demo-started' : ''}`}>
+        <div className='container'>
           <div className="image-stack">
             <div className="image-stack__item image-stack__item--top">
               <motion.div
@@ -137,16 +186,31 @@ const BookingDemo = () => {
             </div>
 
             <div className="image-stack__item image-stack__item--bottom"  >
-              {/* <Tooltip
-                title={tooltipTitle}
-                open={showTooltip}
-                arrow
-                placement="right"
-                // onClick={IsBtnClicked ? handleTooltipClick : undefined}
-                className='MuiTooltip-popper[data-popper-placement*="right"] .css-1k51tf5-MuiTooltip-tooltip'
-              >
-              </Tooltip> */}
-                <img src={currentImage} alt="" onClick={handleImageChange}/>
+              <div>
+                <img src={currentImage} alt="" style={{ position: 'relative', filter: applyFilter ? 'brightness(70%)' : 'brightness(100%)' }} />
+                {tooltipVisible &&
+                  <>
+                    <div className='tooltipDesign' style={tooltipPositions[tooltipIndex]} onClick={tooltipClickHandlers[tooltipIndex]}>
+                      <img src={tooltipImages[tooltipIndex]}
+                        className={tooltipIndex === 1 || tooltipIndex === 3 || tooltipIndex === 5 || tooltipIndex === 6
+                          ? 'cursor-pointer' : null} />
+
+                      {handVisible && <img src={currentHandImage}
+                        onClick={handleNextTooltip}
+                        className='cursor-pointer'
+                        style={
+                          currentHandImage === handimg2 && tooltipIndex === 7
+                            ? { right: '-15%', position: 'absolute', top: '40%',borderRadius:'10px'  }
+                            : (currentHandImage === handimg2 ? { right: '-61%', 
+                            position: 'absolute', top: '40%',borderRadius:'10px' } : {})
+                        } />
+
+                      }
+
+                    </div>
+                  </>
+                }
+              </div>
             </div>
           </div>
         </div>
