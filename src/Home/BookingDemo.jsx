@@ -27,7 +27,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   backgroundColor: 'rgb(255, 255, 255)',
   width: '100%',
-  border:'2px solid white',
+  border: '2px solid white',
   p: 4,
 };
 
@@ -45,8 +45,6 @@ const BookingDemo = () => {
   const [currentStep, setCurrentStep] = useState(-1);
 
   const [open, setOpen] = useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
 
 
   const handleTooltip2Click = () => {
@@ -94,7 +92,6 @@ const BookingDemo = () => {
   ];
 
 
-
   const handleBeginDemo = () => {
     setIsSideBoxVisible(false);
     setTooltipVisible(true);
@@ -103,7 +100,7 @@ const BookingDemo = () => {
     setHandVisible(true);
     setCurrentStep(currentStep + 1);
   };
-  
+
 
   const handleNextTooltip = () => {
     if (applyFilter) {
@@ -111,12 +108,12 @@ const BookingDemo = () => {
       setApplyFilter(false);
     }
     if (currentHandImage == handimg2) {
-      // console.log("ff",applyFilter)
       setCurrentImage(img3)
-      handleStepperClick();
+      setCurrentStep(currentStep + 1);
     }
     if (tooltipIndex == 4) {
       setCurrentImage(img4)
+      setCurrentStep(currentStep + 1);
     }
     if (tooltipIndex == 7) {
       setOpen(true)
@@ -124,6 +121,7 @@ const BookingDemo = () => {
       setApplyFilter(true)
       setTooltipVisible(false)
       setHandVisible(false);
+      setCurrentStep(currentStep + 1);
     }
     else {
       const newIndex = (tooltipIndex + 1) % tooltipImages.length;
@@ -150,11 +148,46 @@ const BookingDemo = () => {
     setOpen(false)
   }
 
-  const handleStepperClick = () => {
-    handleBeginDemo(); 
- 
+  //Child Component
+
+  const updateStateAtIndexZero = () => {
+    if(currentStep == -1){
+      handleBeginDemo();
+    }else{
+      setCurrentImage(img1)
+      setHandVisible(true)
+      setCurrentHandImage(handImg)
+      setApplyFilter(true)
+      setTooltipIndex(0)
+    }
+  }
+
+  const updateStateAtIndexOne = () => {
+      setCurrentImage(img2);
+      setTooltipIndex(1);
+      setHandVisible(false)
+      setApplyFilter(false);
+      setCurrentStep(currentStep + 1); 
+  }
+
+  const updateStateAtIndexTwo = () => {
+    setCurrentImage(img3);
+    setTooltipIndex(3);
+    setCurrentStep(currentStep + 1); 
+    setHandVisible(false)
+    setApplyFilter(false);
   };
 
+  const updateStateAtIndexThree = () => {
+    setCurrentImage(img4);
+    setTooltipIndex(5);
+    setCurrentStep(currentStep + 1); 
+    setHandVisible(false)
+    setApplyFilter(false);
+  }
+
+
+ 
   return (
     <>
 
@@ -230,11 +263,32 @@ const BookingDemo = () => {
                 {tooltipVisible &&
                   <>
                     <div className='tooltipDesign' style={tooltipPositions[tooltipIndex]} onClick={tooltipClickHandlers[tooltipIndex]}>
-                      <img src={tooltipImages[tooltipIndex]}
-                        className={tooltipIndex === 1 || tooltipIndex === 3 || tooltipIndex === 5 || tooltipIndex === 6
-                          ? 'cursor-pointer' : null} />
+                      <motion.div
+                        key={tooltipImages[tooltipIndex]}
+                        initial={{
+                          opacity: 0,
+                          x: 50,
+                        }}
+                        animate={tooltipIndex === 4 ? "fadeIn" : "slideRight"} // Change animation based on tooltip ID
+                        variants={{
+                          fadeIn: { opacity: 1 },
+                          slideRight: { opacity: 1, x: 0 },
+                        }}
+                        transition={{
+                          duration: 1,
+                        }}
+                        style={tooltipIndex === 4 ? { position: 'relative', right: '16%' } : null}
+                        viewport={{ once: true }}
+                      >
+                        <img src={tooltipImages[tooltipIndex]}
+                          className={tooltipIndex === 1 || tooltipIndex === 3 || tooltipIndex === 5 || tooltipIndex === 6
+                            ? 'cursor-pointer' : null} />
+                      </motion.div>
 
-                      {handVisible && <img src={currentHandImage}
+                      {/* Hand Image */}
+                      {handVisible && 
+                      
+                      <img src={currentHandImage}
                         onClick={handleNextTooltip}
                         className='cursor-pointer'
                         style={
@@ -256,8 +310,10 @@ const BookingDemo = () => {
           </div>
         </div>
 
-        <Stepper currentStep={currentStep} handleStepperClick={handleStepperClick}  applyFilter={applyFilter}
-        setCurrentStep={setCurrentStep} numberOfSteps={4} />
+        <Stepper currentStep={currentStep} applyFilter={applyFilter} setCurrentStep={setCurrentStep} 
+        numberOfSteps={4} updateStateAtIndexZero={updateStateAtIndexZero} updateStateAtIndexOne={updateStateAtIndexOne}
+          updateStateAtIndexTwo={updateStateAtIndexTwo} updateStateAtIndexThree={updateStateAtIndexThree}
+          />
       </div>
       <div>
 
@@ -267,7 +323,7 @@ const BookingDemo = () => {
           // disableScrollLock={true}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          // BackdropClick={false}
+        // BackdropClick={false}
         >
           <Box sx={style} style={{ maxWidth: '450px' }}>
             <p className='modalHeading'>
@@ -278,11 +334,11 @@ const BookingDemo = () => {
               Click below to restart from the beginning
             </p>
             <div className='flex justify-center mt-2'>
-            <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
+              <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
         transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
         hover:border-my-green restartBtn" onClick={Restart}>
-              RESTART 
-            </button></div>
+                RESTART
+              </button></div>
           </Box>
         </Modal>
       </div>
