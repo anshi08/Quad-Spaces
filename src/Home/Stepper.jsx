@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import "./Stepper.css"
 
 
-export default function Stepper({ numberOfSteps }) {
-  const [currentStep, setCurrentStep] = useState(-1);
+export default function Stepper({ currentStep, setCurrentStep, numberOfSteps, handleStepperClick, applyFilter }) {
+  
+  // const [currentStep, setCurrentStep] = useState(-1);
 
   const handleStepClick = (index) => {
     setCurrentStep(index);
+    handleStepperClick();
   };
 
   const activeColor = (index) => (currentStep >= index ? 'bg-my-green' : 'bg-my-white');

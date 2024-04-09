@@ -136,3 +136,69 @@
   position: absolute;
   display: flex;
 }
+
+@font-face {
+  font-family: 'Gotham Pro-Bold-BTN8n6eV';
+  src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.modalHeading{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    z-index: 326;
+    font-family: "Gotham Pro-Bold-BTN8n6eV";
+    text-align: center;
+    line-height: 38px;
+}
+
+@font-face {
+  font-family: "Gotham Pro-Normal-EO0rZg56";
+  src: url('../Fonts/gothampro.woff') format('woff');
+}
+.modalDiscrip{
+  opacity: 0.8;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  font-family: "Gotham Pro-Normal-EO0rZg56";
+  text-align: center;
+  line-height: 26px;
+}
+
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+  position:relative ;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+  border: none !important;
+  border-radius: 0% !important;
+}
+
+@font-face {
+  font-family: "Gotham Pro-Bold-BTN8n6eV";
+  src: url('../Fonts/gothampro-bold.woff') format('woff');
+}
+.restartBtn{
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  font-family: "Gotham Pro-Bold-BTN8n6eV";
+  text-align: center;
+  transition-property: none;
+}
+

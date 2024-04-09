@@ -17,6 +17,19 @@ import handimg2 from "../assets/hand2.png"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Stepper from './Stepper';
 import { motion } from 'framer-motion';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'rgb(255, 255, 255)',
+  width: '100%',
+  border:'2px solid white',
+  p: 4,
+};
 
 
 
@@ -29,6 +42,11 @@ const BookingDemo = () => {
   const [tooltipIndex, setTooltipIndex] = useState(0);
   const [handVisible, setHandVisible] = useState(true);
   const [applyFilter, setApplyFilter] = useState(false); // filter
+  const [currentStep, setCurrentStep] = useState(-1);
+
+  const [open, setOpen] = useState(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
 
 
   const handleTooltip2Click = () => {
@@ -79,10 +97,13 @@ const BookingDemo = () => {
 
   const handleBeginDemo = () => {
     setIsSideBoxVisible(false);
-    setTooltipVisible(true)
-    setApplyFilter(true)
-    setHandVisible(true)
+    setTooltipVisible(true);
+    // Set applyFilter to false if currentHandImage is equal to handimg2, otherwise set it to true
+    setApplyFilter(currentHandImage !== handimg2);
+    setHandVisible(true);
+    setCurrentStep(currentStep + 1);
   };
+  
 
   const handleNextTooltip = () => {
     if (applyFilter) {
@@ -90,19 +111,19 @@ const BookingDemo = () => {
       setApplyFilter(false);
     }
     if (currentHandImage == handimg2) {
+      // console.log("ff",applyFilter)
       setCurrentImage(img3)
+      handleStepperClick();
     }
     if (tooltipIndex == 4) {
       setCurrentImage(img4)
     }
     if (tooltipIndex == 7) {
-      setCurrentImage(img1);
-      setIsSideBoxVisible(true);
-      setApplyFilter(false)
-      setTooltipVisible(false);
+      setOpen(true)
+      setCurrentImage(img1)
+      setApplyFilter(true)
+      setTooltipVisible(false)
       setHandVisible(false);
-      setCurrentHandImage(handImg)
-      setTooltipIndex(0);
     }
     else {
       const newIndex = (tooltipIndex + 1) % tooltipImages.length;
@@ -116,9 +137,27 @@ const BookingDemo = () => {
     // setHandVisible(false);
   }
 
+  const Restart = () => {
+    setApplyFilter(false)
+    setCurrentImage(img1);
+    setIsSideBoxVisible(true);
+    setApplyFilter(false)
+    setTooltipVisible(false);
+    setHandVisible(false);
+    setCurrentHandImage(handImg)
+    setTooltipIndex(0);
+    setCurrentStep(-1);
+    setOpen(false)
+  }
+
+  const handleStepperClick = () => {
+    handleBeginDemo(); 
+ 
+  };
 
   return (
     <>
+
       <div className="p-14">
         <motion.div
           initial={{
@@ -200,9 +239,11 @@ const BookingDemo = () => {
                         className='cursor-pointer'
                         style={
                           currentHandImage === handimg2 && tooltipIndex === 7
-                            ? { right: '-15%', position: 'absolute', top: '40%',borderRadius:'10px'  }
-                            : (currentHandImage === handimg2 ? { right: '-61%', 
-                            position: 'absolute', top: '40%',borderRadius:'10px' } : {})
+                            ? { right: '-15%', position: 'absolute', top: '40%', borderRadius: '10px' }
+                            : (currentHandImage === handimg2 ? {
+                              right: '-61%',
+                              position: 'absolute', top: '40%', borderRadius: '10px'
+                            } : {})
                         } />
 
                       }
@@ -215,9 +256,38 @@ const BookingDemo = () => {
           </div>
         </div>
 
-        <Stepper currentStep={0} numberOfSteps={4} />
+        <Stepper currentStep={currentStep} handleStepperClick={handleStepperClick}  applyFilter={applyFilter}
+        setCurrentStep={setCurrentStep} numberOfSteps={4} />
+      </div>
+      <div>
+
+        <Modal
+          open={open}
+          // onClose={handleClose}
+          // disableScrollLock={true}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          // BackdropClick={false}
+        >
+          <Box sx={style} style={{ maxWidth: '450px' }}>
+            <p className='modalHeading'>
+
+              You've completed the demo!
+            </p>
+            <p className='modalDiscrip' sx={{ mt: 2 }}>
+              Click below to restart from the beginning
+            </p>
+            <div className='flex justify-center mt-2'>
+            <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
+        transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
+        hover:border-my-green restartBtn" onClick={Restart}>
+              RESTART 
+            </button></div>
+          </Box>
+        </Modal>
       </div>
     </>
+
   );
 };
 
