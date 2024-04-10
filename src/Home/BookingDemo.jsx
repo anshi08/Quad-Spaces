@@ -336,9 +336,9 @@ const BookingDemo = () => {
                           style={
                             currentHandImage === handimg2 && tooltipIndex === 4
                               ? {
-                                right: windowWidth <= 580 ? '-27%' : windowWidth <= 1023 ? '-30%' : windowWidth <= 1280 ? '-45%' : '-62%',
+                                right: windowWidth <= 580 ? '-23%' : windowWidth <= 1023 ? '-30%' : windowWidth <= 1280 ? '-45%' : '-62%',
                                 position: 'absolute',
-                                top: windowWidth <= 580 ? '83%' : windowWidth <= 1023 ? '76%' : windowWidth <= 1280 ? '68%' : '55%',
+                                top: windowWidth <= 580 ? '74%' : windowWidth <= 1023 ? '76%' : windowWidth <= 1280 ? '68%' : '55%',
                                 borderRadius: '10px',
                               }
                               : currentHandImage === handimg2 && tooltipIndex === 7
