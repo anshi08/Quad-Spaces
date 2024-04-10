@@ -197,7 +197,7 @@ const BookingDemo = () => {
   return (
     <>
 
-      <div className="p-14">
+      <div style={{padding:'3rem 0 0 0'}}>
         <motion.div
           initial={{
             opacity: 0,
@@ -299,11 +299,26 @@ const BookingDemo = () => {
                           className='cursor-pointer'
                           style={
                             currentHandImage === handimg2 && tooltipIndex === 7
-                              ? { right: '-15%', position: 'absolute', top: '40%', borderRadius: '10px' }
-                              : (currentHandImage === handimg2 ? {
-                                right: '-61%',
-                                position: 'absolute', top: '40%', borderRadius: '10px'
-                              } : {})
+                              ? {
+                                  right: '-15%',
+                                  position: 'absolute',
+                                  top: '40%',
+                                  borderRadius: '10px',
+                                  '@media (max-width: 1250px)': {
+                                    right: '-45%'
+                                  }
+                                }
+                              : currentHandImage === handimg2
+                              ? {
+                                  right: '-61%',
+                                  position: 'absolute',
+                                  top: '40%',
+                                  borderRadius: '10px',
+                                  '@media (max-width: 1023px)': {
+                                    right: '-61%'
+                                  }
+                                }
+                              : {} // Add additional conditions as needed
                           } />
 
                       }
