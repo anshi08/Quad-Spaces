@@ -146,11 +146,12 @@
     font-style: normal;
     font-size: 24px;
     color: rgb(0, 0, 0);
-    z-index: 326;
     font-family: "Gotham Pro-Bold-BTN8n6eV";
     text-align: center;
     line-height: 38px;
 }
+
+
 
 @font-face {
   font-family: "Gotham Pro-Normal-EO0rZg56";
@@ -165,6 +166,17 @@
   font-family: "Gotham Pro-Normal-EO0rZg56";
   text-align: center;
   line-height: 26px;
+}
+
+@media (max-width:600px){
+  .modalHeading{
+   font-size: 12px !important;
+   line-height: normal !important;
+  }
+  .modalDiscrip{
+   font-size: 12px !important;
+   line-height: normal !important;
+  }
 }
 
 .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {

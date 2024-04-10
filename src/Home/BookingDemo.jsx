@@ -232,7 +232,7 @@ const BookingDemo = () => {
           <p className="Follow">Follow along to discover how you can easily reserve your workspace</p>
         </motion.div>
       </div>
-      <div style={{ minWidth: '450px' }}>
+      <div >
         <div className='container'>
           <div className="image-stack">
             <div className="image-stack__item image-stack__item--top">
@@ -263,7 +263,7 @@ const BookingDemo = () => {
               </motion.div>
             </div>
 
-            <div className="image-stack__item image-stack__item--bottom" style={{ minWidth: '420px' }} >
+            <div className="image-stack__item image-stack__item--bottom"  >
               <div>
                 <img src={currentImage} alt="" style={{ position: 'relative', filter: applyFilter ? 'brightness(70%)' : 'brightness(100%)' }} />
                 {tooltipVisible &&
@@ -321,7 +321,13 @@ const BookingDemo = () => {
                   // aria-labelledby="modal-modal-title"
                   // aria-describedby="modal-modal-description"
                   >
-                    <Box sx={style} style={{ maxWidth: '556px' }}>
+                    <Box sx={{
+                      ...style,
+                      '@media (max-width: 1023px)': {
+                        width: '71%',
+                        maxHeight: '70%'
+                      },
+                    }} style={{ maxWidth: '556px' }}>
                       <p className='modalHeading'>
 
                         You've completed the demo!
