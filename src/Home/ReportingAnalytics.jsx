@@ -37,7 +37,7 @@ const ReportingAnalytics = () => {
                 <>
 
 
-                    <div>
+                    <div className="reporting-analytics-container">
                         <div className='flex justify-center flex-col items-center'>
                             <motion.div
                                 initial={{

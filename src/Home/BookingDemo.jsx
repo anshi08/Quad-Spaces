@@ -43,6 +43,7 @@ const BookingDemo = () => {
   const [handVisible, setHandVisible] = useState(true);
   const [applyFilter, setApplyFilter] = useState(false); // filter
   const [currentStep, setCurrentStep] = useState(-1);
+  console.log(currentStep)
 
   const [open, setOpen] = useState(false);
 
@@ -129,10 +130,6 @@ const BookingDemo = () => {
       setTooltipVisible(true);
       setHandVisible(false);
     }
-    // const newIndex = (tooltipIndex + 1) % tooltipImages.length;
-    // setTooltipIndex(newIndex);
-    // setTooltipVisible(true);
-    // setHandVisible(false);
   }
 
   const Restart = () => {
@@ -151,9 +148,9 @@ const BookingDemo = () => {
   //Child Component
 
   const updateStateAtIndexZero = () => {
-    if(currentStep == -1){
+    if (currentStep == -1) {
       handleBeginDemo();
-    }else{
+    } else {
       setCurrentImage(img1)
       setHandVisible(true)
       setCurrentHandImage(handImg)
@@ -163,17 +160,17 @@ const BookingDemo = () => {
   }
 
   const updateStateAtIndexOne = () => {
-      setCurrentImage(img2);
-      setTooltipIndex(1);
-      setHandVisible(false)
-      setApplyFilter(false);
-      setCurrentStep(currentStep + 1); 
+    setCurrentImage(img2);
+    setTooltipIndex(1);
+    setHandVisible(false)
+    setApplyFilter(false);
+    setCurrentStep(currentStep + 1);
   }
 
   const updateStateAtIndexTwo = () => {
     setCurrentImage(img3);
     setTooltipIndex(3);
-    setCurrentStep(currentStep + 1); 
+    setCurrentStep(currentStep + 1);
     setHandVisible(false)
     setApplyFilter(false);
   };
@@ -181,13 +178,13 @@ const BookingDemo = () => {
   const updateStateAtIndexThree = () => {
     setCurrentImage(img4);
     setTooltipIndex(5);
-    setCurrentStep(currentStep + 1); 
+    setCurrentStep(currentStep + 1);
     setHandVisible(false)
     setApplyFilter(false);
   }
 
 
- 
+
   return (
     <>
 
@@ -286,19 +283,19 @@ const BookingDemo = () => {
                       </motion.div>
 
                       {/* Hand Image */}
-                      {handVisible && 
-                      
-                      <img src={currentHandImage}
-                        onClick={handleNextTooltip}
-                        className='cursor-pointer'
-                        style={
-                          currentHandImage === handimg2 && tooltipIndex === 7
-                            ? { right: '-15%', position: 'absolute', top: '40%', borderRadius: '10px' }
-                            : (currentHandImage === handimg2 ? {
-                              right: '-61%',
-                              position: 'absolute', top: '40%', borderRadius: '10px'
-                            } : {})
-                        } />
+                      {handVisible &&
+
+                        <img src={currentHandImage}
+                          onClick={handleNextTooltip}
+                          className='cursor-pointer'
+                          style={
+                            currentHandImage === handimg2 && tooltipIndex === 7
+                              ? { right: '-15%', position: 'absolute', top: '40%', borderRadius: '10px' }
+                              : (currentHandImage === handimg2 ? {
+                                right: '-61%',
+                                position: 'absolute', top: '40%', borderRadius: '10px'
+                              } : {})
+                          } />
 
                       }
 
@@ -310,10 +307,10 @@ const BookingDemo = () => {
           </div>
         </div>
 
-        <Stepper currentStep={currentStep} applyFilter={applyFilter} setCurrentStep={setCurrentStep} 
-        numberOfSteps={4} updateStateAtIndexZero={updateStateAtIndexZero} updateStateAtIndexOne={updateStateAtIndexOne}
+        <Stepper currentStep={currentStep} applyFilter={applyFilter} setCurrentStep={setCurrentStep}
+          numberOfSteps={4} updateStateAtIndexZero={updateStateAtIndexZero} updateStateAtIndexOne={updateStateAtIndexOne}
           updateStateAtIndexTwo={updateStateAtIndexTwo} updateStateAtIndexThree={updateStateAtIndexThree}
-          />
+        />
       </div>
       <div>
 

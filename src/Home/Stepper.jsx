@@ -12,12 +12,16 @@ export default function Stepper({ currentStep, setCurrentStep,
     setCurrentStep(index);
     if (index === 0) {
       updateStateAtIndexZero();
+      setCurrentStep(index);
     }else if(index === 1){
       updateStateAtIndexOne();
+      setCurrentStep(index);
     }else if(index === 2){
       updateStateAtIndexTwo();
+      setCurrentStep(index);
     } else if(index === 3){
       updateStateAtIndexThree();
+      setCurrentStep(index);
     }
   };
 
