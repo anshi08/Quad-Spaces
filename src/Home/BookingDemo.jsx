@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BookingDemo.css';
 import img1 from '../assets/BookingDemo.png';
 import img2 from "../assets/BookingDemoImg2.png";
@@ -52,6 +52,19 @@ const BookingDemo = () => {
   const [currentStep, setCurrentStep] = useState(-1);
 
   const [open, setOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
 
   const handleTooltip2Click = () => {
@@ -197,7 +210,7 @@ const BookingDemo = () => {
   return (
     <>
 
-      <div style={{padding:'3rem 0 0 0'}}>
+      <div style={{ padding: '3rem 0 0 0' }}>
         <motion.div
           initial={{
             opacity: 0,
@@ -297,29 +310,32 @@ const BookingDemo = () => {
                         <img src={currentHandImage}
                           onClick={handleNextTooltip}
                           className='cursor-pointer'
+                          
                           style={
-                            currentHandImage === handimg2 && tooltipIndex === 7
+                            currentHandImage === handimg2 && tooltipIndex === 4
                               ? {
-                                  right: '-15%',
-                                  position: 'absolute',
-                                  top: '40%',
-                                  borderRadius: '10px',
-                                  '@media (max-width: 1250px)': {
-                                    right: '-45%'
-                                  }
-                                }
+                                right: windowWidth <= 580 ? '-27%' : windowWidth <= 1023 ? '-30%' : windowWidth <= 1280 ? '-45%' : '-62%',
+                                position: 'absolute',
+                                top: windowWidth <= 580 ? '83%' : windowWidth <= 1023 ? '76%' : windowWidth <= 1280 ? '68%' : '55%',
+                                borderRadius: '10px',
+                              }
+                              : currentHandImage === handimg2 && tooltipIndex === 7
+                              ? {
+                                right: windowWidth <= 1250 ? '-15%' : '-15%',
+                                position: 'absolute',
+                                top: '44%',
+                                borderRadius: '10px',
+                              }
                               : currentHandImage === handimg2
                               ? {
-                                  right: '-61%',
-                                  position: 'absolute',
-                                  top: '40%',
-                                  borderRadius: '10px',
-                                  '@media (max-width: 1023px)': {
-                                    right: '-61%'
-                                  }
-                                }
-                              : {} // Add additional conditions as needed
-                          } />
+                                right: windowWidth <= 560 ? '-20%' : windowWidth <= 750 ? '-25%' : windowWidth <= 1270 ? '-33%' : '-61%',
+                                position: 'absolute',
+                                top: windowWidth <= 560 ? '15%' : windowWidth <= 750 ? '20%' : windowWidth <= 995 ? '30%' : '40%',
+                                borderRadius: '10px',
+                              }
+                              : {}
+                          }
+                           />
 
                       }
 
