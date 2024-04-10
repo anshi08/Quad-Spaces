@@ -18,7 +18,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Stepper from './Stepper';
 import { motion } from 'framer-motion';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import Card from '@mui/material/Card'
 
 const style = {
   position: 'absolute',
@@ -27,8 +27,15 @@ const style = {
   transform: 'translate(-50%, -50%)',
   backgroundColor: 'rgb(255, 255, 255)',
   width: '100%',
-  border: '2px solid white',
+  maxHeight: '222px',
+  height: '100%',
+  outline: 'none',
+  boxShadow: 'none',
   p: 4,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 
@@ -43,7 +50,6 @@ const BookingDemo = () => {
   const [handVisible, setHandVisible] = useState(true);
   const [applyFilter, setApplyFilter] = useState(false); // filter
   const [currentStep, setCurrentStep] = useState(-1);
-  console.log(currentStep)
 
   const [open, setOpen] = useState(false);
 
@@ -160,6 +166,7 @@ const BookingDemo = () => {
   }
 
   const updateStateAtIndexOne = () => {
+    handleBeginDemo();
     setCurrentImage(img2);
     setTooltipIndex(1);
     setHandVisible(false)
@@ -168,6 +175,7 @@ const BookingDemo = () => {
   }
 
   const updateStateAtIndexTwo = () => {
+    handleBeginDemo();
     setCurrentImage(img3);
     setTooltipIndex(3);
     setCurrentStep(currentStep + 1);
@@ -176,6 +184,7 @@ const BookingDemo = () => {
   };
 
   const updateStateAtIndexThree = () => {
+    handleBeginDemo();
     setCurrentImage(img4);
     setTooltipIndex(5);
     setCurrentStep(currentStep + 1);
@@ -223,7 +232,7 @@ const BookingDemo = () => {
           <p className="Follow">Follow along to discover how you can easily reserve your workspace</p>
         </motion.div>
       </div>
-      <div>
+      <div style={{ minWidth: '450px' }}>
         <div className='container'>
           <div className="image-stack">
             <div className="image-stack__item image-stack__item--top">
@@ -254,7 +263,7 @@ const BookingDemo = () => {
               </motion.div>
             </div>
 
-            <div className="image-stack__item image-stack__item--bottom"  >
+            <div className="image-stack__item image-stack__item--bottom" style={{ minWidth: '420px' }} >
               <div>
                 <img src={currentImage} alt="" style={{ position: 'relative', filter: applyFilter ? 'brightness(70%)' : 'brightness(100%)' }} />
                 {tooltipVisible &&
@@ -303,6 +312,33 @@ const BookingDemo = () => {
                   </>
                 }
               </div>
+              <div>
+                {open &&
+                  <Card
+                  // open={open}
+                  // // onClose={handleClose}
+                  // // disableScrollLock={true}
+                  // aria-labelledby="modal-modal-title"
+                  // aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style} style={{ maxWidth: '556px' }}>
+                      <p className='modalHeading'>
+
+                        You've completed the demo!
+                      </p>
+                      <p className='modalDiscrip' sx={{ mt: 2 }}>
+                        Click below to restart from the beginning
+                      </p>
+                      <div className='flex justify-center mt-2'>
+                        <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
+        transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
+        hover:border-my-green restartBtn" onClick={Restart}>
+                          RESTART
+                        </button></div>
+                    </Box>
+                  </Card>
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -311,33 +347,6 @@ const BookingDemo = () => {
           numberOfSteps={4} updateStateAtIndexZero={updateStateAtIndexZero} updateStateAtIndexOne={updateStateAtIndexOne}
           updateStateAtIndexTwo={updateStateAtIndexTwo} updateStateAtIndexThree={updateStateAtIndexThree}
         />
-      </div>
-      <div>
-
-        <Modal
-          open={open}
-          // onClose={handleClose}
-          // disableScrollLock={true}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        // BackdropClick={false}
-        >
-          <Box sx={style} style={{ maxWidth: '450px' }}>
-            <p className='modalHeading'>
-
-              You've completed the demo!
-            </p>
-            <p className='modalDiscrip' sx={{ mt: 2 }}>
-              Click below to restart from the beginning
-            </p>
-            <div className='flex justify-center mt-2'>
-              <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
-        transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
-        hover:border-my-green restartBtn" onClick={Restart}>
-                RESTART
-              </button></div>
-          </Box>
-        </Modal>
       </div>
     </>
 
