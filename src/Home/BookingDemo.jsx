@@ -66,6 +66,17 @@ const BookingDemo = () => {
     };
   }, []);
 
+  //Begin Demo Hover function
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
 
   const handleTooltip2Click = () => {
     setHandVisible(true)
@@ -267,9 +278,20 @@ const BookingDemo = () => {
                   <div className="p-4 md:p-8">
                     <p className="welcome my-2">Welcome to Quadreal Spaces</p>
                     <p className="dashboard my-2">You can book your own workspace using this dashboard.</p>
-                    <div className="flex cursor-pointer items-center" onClick={handleBeginDemo}>
+                    <div className="flex cursor-pointer items-center" onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={handleBeginDemo}>
                       <p className="welcome my-2">BEGIN DEMO</p>
-                      <ArrowForwardIosIcon style={{ color: 'white', fontSize: '1rem' }} className="my-2.5" />
+                      <ArrowForwardIosIcon
+                        style={{
+                          color: 'white',
+                          fontSize: '1rem',
+                          transition: 'transform 0.5s ease',
+                          transform: isHovered ? 'translateX(10px)' : 'none'
+                        }}
+                        className="my-2.5"
+
+                      />
                     </div>
                   </div>
                 </div>
@@ -310,7 +332,7 @@ const BookingDemo = () => {
                         <img src={currentHandImage}
                           onClick={handleNextTooltip}
                           className='cursor-pointer'
-                          
+
                           style={
                             currentHandImage === handimg2 && tooltipIndex === 4
                               ? {
@@ -320,22 +342,22 @@ const BookingDemo = () => {
                                 borderRadius: '10px',
                               }
                               : currentHandImage === handimg2 && tooltipIndex === 7
-                              ? {
-                                right: windowWidth <= 1250 ? '-15%' : '-15%',
-                                position: 'absolute',
-                                top: '44%',
-                                borderRadius: '10px',
-                              }
-                              : currentHandImage === handimg2
-                              ? {
-                                right: windowWidth <= 560 ? '-20%' : windowWidth <= 750 ? '-25%' : windowWidth <= 1270 ? '-33%' : '-61%',
-                                position: 'absolute',
-                                top: windowWidth <= 560 ? '15%' : windowWidth <= 750 ? '20%' : windowWidth <= 995 ? '30%' : '40%',
-                                borderRadius: '10px',
-                              }
-                              : {}
+                                ? {
+                                  right: windowWidth <= 1250 ? '-15%' : '-15%',
+                                  position: 'absolute',
+                                  top: '44%',
+                                  borderRadius: '10px',
+                                }
+                                : currentHandImage === handimg2
+                                  ? {
+                                    right: windowWidth <= 560 ? '-20%' : windowWidth <= 750 ? '-25%' : windowWidth <= 1270 ? '-33%' : '-61%',
+                                    position: 'absolute',
+                                    top: windowWidth <= 560 ? '15%' : windowWidth <= 750 ? '20%' : windowWidth <= 995 ? '30%' : '40%',
+                                    borderRadius: '10px',
+                                  }
+                                  : {}
                           }
-                           />
+                        />
 
                       }
 
