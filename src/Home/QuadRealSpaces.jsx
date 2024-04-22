@@ -14,7 +14,7 @@ import { Card, Grid } from '@mui/material';
 import { motion } from "framer-motion";
 import svgImage from "../assets/image (1).svg";
 
-const QuadRealSpaces = () => {
+const QuadRealSpaces = ({ QuadSpaceData }) => {
 
     const [value, setValue] = React.useState('1');
 
@@ -60,6 +60,8 @@ const QuadRealSpaces = () => {
         }
     ]
 
+    const SpaceData = QuadSpaceData
+
 
 
     return (
@@ -83,7 +85,7 @@ const QuadRealSpaces = () => {
                 // style={{ padding: '3rem 0' }}
 
                 >
-                    <p className='whatIs'>What is QuadReal Spaces?</p>
+                    <p className='whatIs'>{SpaceData.heading}</p>
                 </motion.div>
 
                 <motion.div
@@ -107,8 +109,7 @@ const QuadRealSpaces = () => {
                     }}
 
                 >
-                    <p className='custom my-4'>A custom tailored space management solution, providing our
-                        tenants with valuable insights and controls for their spaces.</p>
+                    <p className='custom my-4'>{SpaceData.sub_heading}</p>
                 </motion.div>
             </div>
 

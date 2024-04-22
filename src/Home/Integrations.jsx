@@ -26,7 +26,9 @@ const items = [
     }
 ]
 
-const Integrations = () => {
+const Integrations = ({ IntegrationsData }) => {
+
+    const intData = IntegrationsData
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
     const currentItem = items[currentItemIndex];
 
@@ -58,7 +60,7 @@ const Integrations = () => {
                     // style={{ padding: '3rem 0' }}
 
                     >
-                        <p className='integrations'>Integrations</p>
+                        <p className='integrations'>{intData.heading}</p>
                     </motion.div>
 
                     <motion.div
@@ -77,7 +79,7 @@ const Integrations = () => {
                     // style={{ padding: '3rem 0' }}
 
                     >
-                        <p className='follow my-3'>Quadreal Spaces works with the following:</p>
+                        <p className='follow my-3'>{intData.sub_heading}</p>
                     </motion.div>
                 </div>
 
@@ -123,7 +125,7 @@ const Integrations = () => {
                     // style={{ padding: '3rem 0' }}
 
                     >
-                        <p className='integrations'>Testimonials</p>
+                        <p className='integrations'>{intData.text}</p>
                     </motion.div>
                 </div>
                 {currentItem && (

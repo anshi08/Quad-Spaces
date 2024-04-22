@@ -14,7 +14,9 @@ import ArrowIcon from "../assets/ArrowIcon.svg"
 import ChildComponent from './ChildComponent';
 import { motion } from "framer-motion"
 
-const ReportingAnalytics = () => {
+const ReportingAnalytics = ({ ReportingAnalyticsData }) => {
+
+    const reportData = ReportingAnalyticsData
 
     const [clickedCard, setClickedCard] = useState(false);
 
@@ -55,7 +57,7 @@ const ReportingAnalytics = () => {
                             // style={{ padding: '3rem 0' }}
 
                             >
-                                <p className='reporting'>Reporting Analytics</p>
+                                <p className='reporting'>{reportData.heading}</p>
                             </motion.div>
 
                             <motion.div
@@ -74,7 +76,7 @@ const ReportingAnalytics = () => {
                             // style={{ padding: '3rem 0' }}
 
                             >
-                                <p className='clickMore'>Click below to learn more</p>
+                                <p className='clickMore'>{reportData.sub_heading}</p>
                             </motion.div>
                         </div>
 
@@ -131,7 +133,7 @@ const ReportingAnalytics = () => {
                                                     className='my-3'
                                                 >
                                                     <p className='cardText'>
-                                                        Occupancy
+                                                        {reportData.card_text1}
                                                     </p>
                                                 </motion.div>
 
@@ -185,7 +187,7 @@ const ReportingAnalytics = () => {
                                                     className='my-3'
                                                 >
                                                     <p className='cardText'>
-                                                        Meeting Rooms
+                                                        {reportData.card_text2}
                                                     </p>
                                                 </motion.div>
 
@@ -243,7 +245,7 @@ const ReportingAnalytics = () => {
                                                     className='my-3'
                                                 >
                                                     <p className='cardText' >
-                                                        Departments
+                                                        {reportData.card_text3}
                                                     </p>
                                                 </motion.div>
 

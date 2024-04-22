@@ -8,34 +8,35 @@ import ReportingAnalytics from './ReportingAnalytics';
 import BookingDemo from './BookingDemo';
 import Integrations from './Integrations';
 import Inquire from './Inquire';
+import HomeData from "./Home.json"
 
 
 
 const Home = () => {
 
-
+    const data = HomeData.response.data.data
 
     return (
         <>
             <div className="blurrable overflow-hidden">
-                <QuadRealText />
+                <QuadRealText QuadData={data.quad_real_text}/>
             </div>
             <div style={{ padding: '2rem', marginTop: '2rem' }} className="blurrable overflow-x-clip" 
             id='target-component'>
-                <QuadRealSpaces />
+                <QuadRealSpaces QuadSpaceData={data.quad_real_space}/>
             </div>
             <div style={{ marginTop: '2rem' }} className="blurrable">
-                <SpaceMgt />
+                <SpaceMgt SpaceMgtData={data.space_management} />
             </div>
             <div style={{ marginTop: '3rem' ,padding:'2rem'}} className='overflow-x-clip'>
-                <ReportingAnalytics />
+                <ReportingAnalytics ReportingAnalyticsData={data.reporting_analytics}/>
             </div>
             <div style={{  backgroundColor:'rgb(241, 248, 248)' }} className="blurrable">
-                <BookingDemo />
+                <BookingDemo BookingDemoData={data.booking_demo}/>
             </div>
             <div className="blurrable overflow-x-clip">
-            <Integrations />
-            <Inquire/>
+            <Integrations IntegrationsData={data.integrations}/>
+            <Inquire InquireData={data.inquires_text}/>
             </div>
          
         </>

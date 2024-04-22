@@ -7,12 +7,14 @@ import "./SpaceMgt.css";
 import svgImage from "../assets/image (1).svg";
 import { motion } from "framer-motion"
 
-const SpaceMgt = () => {
+const SpaceMgt = ({ SpaceMgtData }) => {
     const [selectedItem, setSelectedItem] = useState(1); // Default selected item is 1
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
     };
+
+    const spacemanageData = SpaceMgtData
 
     return (
         <>
@@ -43,7 +45,7 @@ const SpaceMgt = () => {
                     // style={{ padding: '3rem 0' }}
 
                     >
-                        <p className='occupancytext'>Space Management & Occupancy Tracking</p>
+                        <p className='occupancytext'>{spacemanageData.heading}</p>
                     </motion.div>
 
                     <motion.div
@@ -62,7 +64,7 @@ const SpaceMgt = () => {
                         className='spanTag my-4'
 
                     >
-                        <span >Click below to see more</span>
+                        <span >{spacemanageData.sub_heading}</span>
                     </motion.div>
 
                     <motion.div
@@ -86,7 +88,7 @@ const SpaceMgt = () => {
                             <p
                                 onClick={() => handleItemClick(1)}
                                 className={`selected12 ${selectedItem === 1 ? 'selected' : ''}`}>
-                                Manage your Floorplan
+                                {spacemanageData.btn_text1}
                             </p>
                             {selectedItem === 1 && (
                                 <div className='sidearrow-animation'>
@@ -141,7 +143,7 @@ const SpaceMgt = () => {
                             <p
                                 onClick={() => handleItemClick(2)}
                                 className={`selected12 ${selectedItem === 2 ? 'selected' : ''}`}>
-                                Tracking Occupancy
+                                {spacemanageData.btn_text2}
                             </p>
                             {selectedItem === 2 && (
                                 <div className='sidearrow-animation'>
@@ -231,7 +233,7 @@ const SpaceMgt = () => {
                   }}
               >
                   <p className='easily'>
-                      Easily navigate between each building and floor to reserve any desk or workstation that you need.
+                      {spacemanageData.card_text.para1}
                   </p>
               </motion.div>
                     )}
@@ -262,7 +264,7 @@ const SpaceMgt = () => {
                                 textAlign: 'center', color: 'black' }}
                             >
                         
-                            <p className='computerText'>Easily monitor which desks and meeting rooms become available in real time from you computer.
+                            <p className='computerText'>{spacemanageData.card_text.para2}
                             </p>
                         </motion.div>
                     )}

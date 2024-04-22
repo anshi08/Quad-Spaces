@@ -1,0 +1,59 @@
+{
+    "response": {
+        "data": {
+            "data": {
+                "quad_real_text": {
+                    "text_first": "An intuitive workplace experience platform",
+                    "text_second": "Flexible space management platform for Facilities management",
+                    "text_third": "Real-time occupancy layers to understand how teams utilize your spaces and meeting rooms",
+                    "text_fourth":"Space booking platform for desks, meeting rooms, and common spaces",
+                    "text_fifth":"Data and analytics dashboard with valuable insights"
+                },
+                "quad_real_space": {
+                    "heading": "What is QuadReal Spaces?",
+                    "sub_heading": "A custom tailored space management solution, providing our tenants with valuable insights and controls for their spaces."
+                },
+                "space_management":{
+                    "heading":"Space Management & Occupancy Tracking",
+                    "sub_heading":"Click below to see more",
+                    "btn_text1":"Manage your Floorplan",
+                    "btn_text2":"Tracking Occupancy",
+                    "card_text":{
+                        "para1":"Easily navigate between each building and floor to reserve any desk or workstation that you need.",
+                        "para2":"Easily monitor which desks and meeting rooms become available in real time from you computer."
+                    }
+                },
+                "reporting_analytics":{
+                    "heading":"Reporting Analytics",
+                    "sub_heading":"Click below to learn more",
+                    "card_text1":"Occupancy",
+                    "card_text2":"Meeting Rooms",
+                    "card_text3":"Departments"
+                },
+                "booking_demo":{
+                    "heading":"Booking Demo",
+                    "sub_heading":"Follow along to discover how you can easily reserve your workspace",
+                    "side_text":"Welcome to Quadreal Spaces",
+                    "side_para":"You can book your own workspace using this dashboard.",
+                    "btn_text":"BEGIN DEMO",
+                    "Modal":{
+                        "heading":"You've completed the demo!",
+                        "text":"Click below to restart from the beginning",
+                        "btn":"RESTART"
+                    }
+                },
+                "integrations":{
+                    "heading":"Integrations",
+                    "sub_heading":"Quadreal Spaces works with the following:",
+                    "text":"Testimonials"
+                },
+                "inquires_text":{
+                    "heading":"Interested in learning more about our platform?",
+                    "sub_heading":"Contact us today to find out how your team can benefit from bringing your office space onto QuadReal Spaces.",
+                    "btn":"INQUIRE NOW"
+                   
+                }
+            }
+        }
+    }
+}

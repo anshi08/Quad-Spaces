@@ -4,7 +4,9 @@ import "./Inquire.css"
 import image1 from "../assets/contactUs.jpg"
 import { motion } from "framer-motion"
 
-const Inquire = () => {
+const Inquire = ({ InquireData }) => {
+
+  const Inquiredata = InquireData
   return (
     <Grid container>
       <Grid item xs={12} md={6} display="flex" alignItems="center" padding={12}>
@@ -26,7 +28,7 @@ const Inquire = () => {
           // style={{ padding: '3rem 0' }}
 
           >
-            <p className='platform'>Interested in learning more about our platform?</p>
+            <p className='platform'>{Inquiredata.heading}</p>
           </motion.div>
 
           <motion.div
@@ -45,7 +47,7 @@ const Inquire = () => {
           // style={{ padding: '3rem 0' }}
 
           >
-            <p className='Contactus my-4'>Contact us today to find out how your team can benefit from bringing your office space onto QuadReal Spaces.</p>
+            <p className='Contactus my-4'>{Inquiredata.sub_heading}</p>
           </motion.div>
 
           <motion.div
@@ -68,7 +70,7 @@ const Inquire = () => {
               <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
         transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
         hover:border-my-green btn" >
-                INQUIRE NOW
+                {Inquiredata.btn}
               </button></a>
           </motion.div>
         </div>

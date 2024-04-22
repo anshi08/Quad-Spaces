@@ -13,12 +13,14 @@ import img2 from "../assets/image (1).png"
 import img3 from "../assets/image (2).png"
 import img4 from "../assets/image (3).png"
 
-const QuadRealText = () => {
+const QuadRealText = ({ QuadData }) => {
 
     const handleScrollDown = () => {
         const targetComponent = document.getElementById('target-component');
         targetComponent.scrollIntoView({ behavior: 'smooth' });
     };
+
+    const data = QuadData
 
 
     return (
@@ -83,7 +85,7 @@ const QuadRealText = () => {
                             // style={{ padding: '3rem 0' }}
 
                             >
-                                <p className='workplace my-4'>An intuitive workplace experience platform</p>
+                                <p className='workplace my-4'>{data.text_first}</p>
                             </motion.div>
 
                             <Grid container spacing={2} className='Gridclass'>
@@ -107,7 +109,7 @@ const QuadRealText = () => {
                                             viewport={{ once: true }}
                                         >
 
-                                            <p className='space mx-2'>Flexible space management platform for Facilities management</p>
+                                            <p className='space mx-2'>{data.text_second}</p>
                                         </motion.div>
                                     </div>
                                     <div className='flex my-4'>
@@ -126,7 +128,7 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='RealTime mx-2'>Real-time occupancy layers to understand how teams utilize your spaces and meeting rooms</p>
+                                            <p className='RealTime mx-2'>{data.text_third}</p>
                                         </motion.div>
                                     </div>
 
@@ -150,7 +152,7 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='booking mx-2'>Space booking platform for desks, meeting rooms, and common spaces</p>
+                                            <p className='booking mx-2'>{data.text_fourth}</p>
                                         </motion.div>
                                     </div>
                                     <div className='flex my-4'>
@@ -169,7 +171,7 @@ const QuadRealText = () => {
                                             }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className='Data mx-2'>Data and analytics dashboard with valuable insights</p>
+                                            <p className='Data mx-2'>{data.text_fifth}</p>
                                         </motion.div>
                                     </div>
                                 </Grid>

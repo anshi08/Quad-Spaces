@@ -40,8 +40,9 @@ const style = {
 
 
 
-const BookingDemo = () => {
+const BookingDemo = ({ BookingDemoData }) => {
 
+  const bookingDemoData = BookingDemoData
   const [currentImage, setCurrentImage] = useState(img1);
   const [currentHandImage, setCurrentHandImage] = useState(handImg);
   const [isSideBoxVisible, setIsSideBoxVisible] = useState(true);
@@ -236,7 +237,7 @@ const BookingDemo = () => {
           }}
           viewport={{ once: true }}
         >
-          <p className="bookDemo">Booking Demo</p>
+          <p className="bookDemo">{bookingDemoData.heading}</p>
         </motion.div>
 
         <motion.div
@@ -253,7 +254,7 @@ const BookingDemo = () => {
           }}
           viewport={{ once: true }}
         >
-          <p className="Follow">Follow along to discover how you can easily reserve your workspace</p>
+          <p className="Follow">{bookingDemoData.sub_heading}</p>
         </motion.div>
       </div>
       <div >
@@ -276,12 +277,12 @@ const BookingDemo = () => {
               >
                 <div style={{ backgroundColor: 'rgb(15, 103, 100)', display: isSideBoxVisible ? 'block' : 'none' }}>
                   <div className="p-4 md:p-8">
-                    <p className="welcome my-2">Welcome to Quadreal Spaces</p>
-                    <p className="dashboard my-2">You can book your own workspace using this dashboard.</p>
+                    <p className="welcome my-2">{bookingDemoData.side_text}</p>
+                    <p className="dashboard my-2">{bookingDemoData.side_para}</p>
                     <div className="flex cursor-pointer items-center" onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                       onClick={handleBeginDemo}>
-                      <p className="welcome my-2">BEGIN DEMO</p>
+                      <p className="welcome my-2">{bookingDemoData.btn_text}</p>
                       <ArrowForwardIosIcon
                         style={{
                           color: 'white',
@@ -383,16 +384,16 @@ const BookingDemo = () => {
                     }} style={{ maxWidth: '556px' }}>
                       <p className='modalHeading'>
 
-                        You've completed the demo!
+                        {bookingDemoData.Modal.heading}
                       </p>
                       <p className='modalDiscrip' sx={{ mt: 2 }}>
-                        Click below to restart from the beginning
+                        {bookingDemoData.Modal.text}
                       </p>
                       <div className='flex justify-center mt-2'>
                         <button className="px-8 py-2 bg-rgb-15-103-100 text-white 
         transition duration-200 hover:bg-white hover:text-black border-2 border-transparent
         hover:border-my-green restartBtn" onClick={Restart}>
-                          RESTART
+                          {bookingDemoData.Modal.btn}
                         </button></div>
                     </Box>
                   </Card>
